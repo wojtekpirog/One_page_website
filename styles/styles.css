@@ -11,13 +11,6 @@ hr {
   border-radius: 2px;
 }
 
-/* Conflicting styles */
-
-hr {
-  border: solid 6px;
-  border-radius: 6px;
-}
-
 #birthday_party_items > li:first-of-type {
   list-style-type: "🎈 ";
 }
