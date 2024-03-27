@@ -129,4 +129,62 @@ h1 {
 }
 .app-container .link.four:hover::before {
   height: 100%;
+}
+.app-container .link.five {
+  z-index: 0;
+}
+.app-container .link.five:hover {
+  animation: blink 0.5s linear;
+}
+.app-container .link.five:hover::before, .app-container .link.five:hover::after {
+  animation: background 0.3s 0.5s linear forwards;
+}
+.app-container .link.five::before, .app-container .link.five::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background-color: #fff;
+  z-index: -1;
+}
+.app-container .link.five::before {
+  left: 0;
+}
+.app-container .link.five::after {
+  right: 0;
+}
+@keyframes background {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
