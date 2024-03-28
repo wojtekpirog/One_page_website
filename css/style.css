@@ -32,159 +32,81 @@ h1 {
   background-color: #222;
   box-shadow: 0 0 15px rgba(0, 140, 255, 0.5);
 }
-.app-container .link {
+.app-container button {
   position: relative;
-  text-decoration: none;
-  padding: 10px 20px;
-  font-size: 1.8rem;
-  color: #008cff;
+  margin: 20px;
+  padding: 15px 30px;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 56px;
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
 }
-.app-container .link.one:hover::after {
-  transform: scaleX(1);
-  transform-origin: right;
-}
-.app-container .link.one::after {
+.app-container button::before, .app-container button::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background-color: #fff;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s, opacity 0.5s;
+  display: block;
+  transition: all 0.5s;
 }
-.app-container .link.two::before, .app-container .link.two::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  transition: border 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
-}
-.app-container .link.two::before {
-  top: -4px;
-  left: -4px;
-  border-top: 0;
-  border-left: 0;
-}
-.app-container .link.two::after {
-  bottom: -4px;
-  right: -4px;
-  border-bottom: 0;
-  border-right: 0;
-}
-.app-container .link.two:hover::before, .app-container .link.two:hover::after {
-  width: 50%;
-  height: 50%;
-}
-.app-container .link.two:hover::before {
-  border-top: 2px solid #fff;
-  border-left: 2px solid #fff;
-}
-.app-container .link.two:hover::after {
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
-}
-.app-container .link.three::before, .app-container .link.three::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  bottom: 0;
-  border-bottom: 2px solid #fff;
-  transition: width 0.3s ease-in-out;
-}
-.app-container .link.three::before {
-  left: 50%;
-}
-.app-container .link.three::after {
-  right: 50%;
-}
-.app-container .link.three:hover::before, .app-container .link.three:hover::after {
-  width: 50%;
-}
-.app-container .link.three:hover::before {
-  left: 0;
-}
-.app-container .link.three:hover::after {
-  right: 0;
-}
-.app-container .link.four {
-  transition: color 0.3s ease-in-out;
-  z-index: 0;
-}
-.app-container .link.four::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 0;
-  background-color: #008cff;
-  transition: height 0.3s ease-in-out;
-  z-index: -1;
-}
-.app-container .link.four:hover {
+.app-container button.slide {
   color: #000;
+  background-color: rgb(255, 216, 20);
+  border: none;
+  text-transform: none;
+  width: 210px;
+  height: 60px;
 }
-.app-container .link.four:hover::before {
+.app-container button.slide::before {
   height: 100%;
-}
-.app-container .link.five {
-  z-index: 0;
-}
-.app-container .link.five:hover {
-  animation: blink 0.5s linear;
-}
-.app-container .link.five:hover::before, .app-container .link.five:hover::after {
-  animation: background 0.3s 0.5s linear forwards;
-}
-.app-container .link.five::before, .app-container .link.five::after {
-  content: "";
-  position: absolute;
   top: 0;
-  bottom: 0;
-  width: 0;
-  background-color: #fff;
-  z-index: -1;
+  left: -10px;
+  border-left: 2px solid #000;
 }
-.app-container .link.five::before {
+.app-container button.slide::after {
+  width: 100%;
+  top: -10px;
   left: 0;
+  border-top: 2px solid #000;
+  transition-delay: 100ms;
 }
-.app-container .link.five::after {
-  right: 0;
+.app-container button.slide:hover::before {
+  left: 230px;
 }
-@keyframes background {
-  from {
-    width: 0;
-  }
-  to {
-    width: 50%;
-  }
+.app-container button.slide:hover::after {
+  top: 80px;
 }
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.app-container button.slide span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.app-container button.slice {
+  border: none;
+  border-radius: 56px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: rgb(0, 172, 238);
+  text-transform: none;
+}
+.app-container button.glass {
+  border: none;
+  border-radius: 56px;
+  background-color: #ff0000;
+}
+.app-container button.hmm {
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(121, 82, 179);
+  text-transform: none;
+  font-weight: bold;
+}
+.app-container button.border {
+  border: none;
+  border-radius: 0;
+  text-transform: none;
+  background-color: #000;
 }/*# sourceMappingURL=style.css.map */

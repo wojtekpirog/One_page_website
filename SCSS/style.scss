@@ -2,10 +2,17 @@
 
 // Mapa SCSS:
 $colors: (
-  black: #000,
-  white: #fff,
-  blue-link: #008cff
-);
+    black: #000,
+    white: #fff,
+    blue-link: #008cff,
+  );
+  
+  $additional-colors: (
+    twitter: rgb(0, 172, 238),
+    amazon: rgb(255, 216, 20),
+    youtube: #ff0000,
+    bootstrap: rgb(121, 82, 179),
+  );
 
 body {
   background-color: #3e3e3e;
@@ -28,191 +35,95 @@ h1 {
   background-color: #222;
   box-shadow: 0 0 15px rgba(0, 140, 255, .5);
 
-  .link {
+  button {
     position: relative;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 1.8rem;
-    color: map-get($colors, blue-link);
+    margin: 20px;
+    padding: 15px 30px;
+    background: none;
+    border: 2px solid map-get($colors, white);
+    border-radius: 56px;
+    color: map-get($colors, white);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
 
-    &.one {
-      &:hover {
-        &::after {
-          transform: scaleX(1);
-          transform-origin: right;
-        }
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 3px;
-        width: 100%;
-        background-color: map-get($colors, white);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform .5s, opacity .5s;
-      }
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      transition: all .5s;
     }
 
-    &.two {
-      &::before, &::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 0;
-        transition: border .3s ease-in-out, width .3s ease-in-out, height .3s ease-in-out;
-      }
+    // Slide button
+    &.slide {
+      color: map-get($colors, black);
+      background-color: map-get($additional-colors, amazon);
+      border: none;
+      text-transform: none;
+      width: 210px;
+      height: 60px;
 
       &::before {
-        top: -4px;
-        left: -4px;
-        border-top: 0;
-        border-left: 0;
-        // transition: border-top .5s ease-in-out, border-left .5s ease-in-out;
-      }
-
-      &::after {
-        bottom: -4px;
-        right: -4px;
-        border-bottom: 0;
-        border-right: 0;
-      }
-
-      &:hover {
-        &::before, &::after {
-          width: 50%;
-          height: 50%;
-        }
-
-        &::before {
-          border-top: 2px solid map-get($colors, white);
-          border-left: 2px solid map-get($colors, white);
-        }
-
-        &::after {
-          border-bottom: 2px solid map-get($colors, white);
-          border-right: 2px solid map-get($colors, white);
-        }
-      }
-    }
-
-    &.three {
-      &::before, &::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        bottom: 0;
-        border-bottom: 2px solid map-get($colors, white);
-        transition: width .3s ease-in-out;
-      }
-
-      &::before {
-        left: 50%;
-      }
-
-      &::after {
-        right: 50%;
-      }
-
-      &:hover {
-        &::before, &::after {
-          width: 50%;
-        }
-
-        &::before {
-          left: 0;
-        }
-
-        &::after {
-          right: 0;
-        }
-      }
-    }
-
-    &.four {
-      transition: color .3s ease-in-out;
-      z-index: 0;
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 0;
-        background-color: map-get($colors, blue-link);
-        transition: height .3s ease-in-out;
-        z-index: -1;
-      }
-
-      &:hover {
-        color: map-get($colors, black);
-
-        &::before {
-          height: 100%;
-        }
-      }
-    }
-
-    &.five {
-      z-index: 0;
-
-      &:hover {
-        animation: blink .5s linear;
-
-        &::before, &::after {
-          animation: background .3s .5s linear forwards;
-        }
-      }
-
-      &::before, &::after {
-        content: "";
-        position: absolute;
+        height: 100%;
         top: 0;
-        bottom: 0;
-        width: 0;
-        background-color: map-get($colors, white);
-        z-index: -1;
-      }
-
-      &::before {
-        left: 0;
+        left: -10px;
+        border-left: 2px solid map-get($colors, black);
       }
 
       &::after {
-        right: 0;
+        width: 100%;
+        top: -10px;
+        left: 0;
+        border-top: 2px solid map-get($colors, black);
+        transition-delay: 100ms;
       }
 
-      @keyframes background {
-        from {
-          width: 0;
-        } to {
-          width: 50%;
+      &:hover {
+        &::before {
+          left: 230px;
+        }
+        &::after {
+          top: 80px;
         }
       }
 
-      @keyframes blink {
-        0% {
-          opacity: 1;
-        } 10% {
-          opacity: 0;
-        } 20% {
-          opacity: 0;
-        } 30% {
-          opacity: 1;
-        } 40% {
-          opacity: 1;
-        } 60% {
-          opacity: 0;
-        } 75% {
-          opacity: 0;
-        } 100% {
-          opacity: 1;
-        }
+      & span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
+    }
+
+    &.slice {
+      border: none;
+      border-radius: 56px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      background-color: map-get($additional-colors, twitter);
+      text-transform: none;
+    }
+
+    &.glass {
+      border: none;
+      border-radius: 56px;
+      background-color: map-get($additional-colors, youtube);
+    }
+
+    &.hmm {
+      border: none;
+      border-radius: 4px;
+      background-color: map-get($additional-colors, bootstrap);
+      text-transform: none;
+      font-weight: bold;
+    }
+
+    &.border {
+      border: none;
+      border-radius: 0;
+      text-transform: none;
+      background-color: map-get($colors, black);
     }
   }
 }
