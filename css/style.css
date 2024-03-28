@@ -46,10 +46,9 @@ h1 {
   cursor: pointer;
 }
 .app-container button::before, .app-container button::after {
-  content: "";
   position: absolute;
+  content: "";
   display: block;
-  transition: all 0.5s;
 }
 .app-container button.slide {
   color: #000;
@@ -59,42 +58,27 @@ h1 {
   width: 210px;
   height: 60px;
 }
-.app-container button.slide::before {
-  height: 100%;
-  top: 0;
-  left: -10px;
-  border-left: 2px solid #000;
-}
-.app-container button.slide::after {
-  width: 100%;
-  top: -10px;
-  left: 0;
-  border-top: 2px solid #000;
-  transition-delay: 100ms;
-}
 .app-container button.slide span {
   position: absolute;
-  transition: left 300ms ease-in-out, top 300ms ease-in-out;
   transform: translate(-50%, -50%);
 }
 .app-container button.slide span:first-child {
   top: 50%;
   left: 50%;
+  transition: all 500ms ease-in-out;
 }
 .app-container button.slide span:nth-child(2) {
   left: -50%;
   top: 0;
   width: 100%;
-}
-.app-container button.slide:hover::before {
-  left: 230px;
-}
-.app-container button.slide:hover::after {
-  top: 80px;
+  transition: left 500ms ease-in-out, top 500ms ease-in-out;
+  transition-delay: 500ms;
 }
 .app-container button.slide:hover span:first-child {
+  transform: blur(5px);
+  opacity: 0;
   top: 100%;
-  left: 110%;
+  left: 100%;
 }
 .app-container button.slide:hover span:nth-child(2) {
   left: 50%;
@@ -107,6 +91,28 @@ h1 {
   font-weight: bold;
   background-color: rgb(0, 172, 238);
   text-transform: none;
+  z-index: 0;
+}
+.app-container button.slice::before, .app-container button.slice::after {
+  width: 100%;
+  height: 100%;
+  background-color: #008cff;
+  z-index: -1;
+  transition: left 500ms ease-in-out, right 500ms ease-in-out;
+}
+.app-container button.slice::before {
+  left: -100%;
+  top: -50%;
+}
+.app-container button.slice::after {
+  right: -100%;
+  bottom: -50%;
+}
+.app-container button.slice:hover::before {
+  left: 0;
+}
+.app-container button.slice:hover::after {
+  right: 0;
 }
 .app-container button.glass {
   border: none;
