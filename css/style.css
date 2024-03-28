@@ -122,13 +122,49 @@ h1 {
 .app-container button.hmm {
   border: none;
   border-radius: 4px;
-  background-color: rgb(121, 82, 179);
   text-transform: none;
-  font-weight: bold;
+  transition: box-shadow 400ms ease-in-out;
+}
+.app-container button.hmm:hover {
+  box-shadow: 2px 2px 0 0 rgb(121, 82, 179), inset 6px 6px 6px 0 rgba(0, 0, 0, 0.4);
 }
 .app-container button.border {
   border: none;
   border-radius: 0;
   text-transform: none;
   background-color: #000;
+}
+.app-container button.border2 {
+  border-radius: 0;
+  overflow: visible;
+  transition: color 500ms ease-in-out;
+}
+.app-container button.border2::before, .app-container button.border2::after {
+  width: 100%;
+  height: 100%;
+  transition: color 500ms, top 500ms, left 500ms, bottom 500ms, right 500ms, border 500ms;
+}
+.app-container button.border2::before {
+  top: 0;
+  left: 0;
+}
+.app-container button.border2::after {
+  bottom: 0;
+  right: 0;
+}
+.app-container button.border2:hover {
+  border-color: transparent;
+  color: rgb(121, 82, 179);
+}
+.app-container button.border2:hover::before {
+  top: -10px;
+  left: -10px;
+  border-top: 3px solid rgb(121, 82, 179);
+  border-left: 3px solid rgb(121, 82, 179);
+}
+.app-container button.border2:hover::after {
+  bottom: -10px;
+  right: -10px;
+  border-bottom: 3px solid rgb(121, 82, 179);
+  border-right: 3px solid rgb(121, 82, 179);
 }/*# sourceMappingURL=style.css.map */
