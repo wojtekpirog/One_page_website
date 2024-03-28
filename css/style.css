@@ -72,17 +72,33 @@ h1 {
   border-top: 2px solid #000;
   transition-delay: 100ms;
 }
+.app-container button.slide span {
+  position: absolute;
+  transition: left 300ms ease-in-out, top 300ms ease-in-out;
+  transform: translate(-50%, -50%);
+}
+.app-container button.slide span:first-child {
+  top: 50%;
+  left: 50%;
+}
+.app-container button.slide span:nth-child(2) {
+  left: -50%;
+  top: 0;
+  width: 100%;
+}
 .app-container button.slide:hover::before {
   left: 230px;
 }
 .app-container button.slide:hover::after {
   top: 80px;
 }
-.app-container button.slide span {
-  position: absolute;
-  top: 50%;
+.app-container button.slide:hover span:first-child {
+  top: 100%;
+  left: 110%;
+}
+.app-container button.slide:hover span:nth-child(2) {
   left: 50%;
-  transform: translate(-50%, -50%);
+  top: 50%;
 }
 .app-container button.slice {
   border: none;
