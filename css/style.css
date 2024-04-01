@@ -115,9 +115,20 @@ h1 {
   right: 0;
 }
 .app-container button.glass {
-  border: none;
+  border: 2px solid #fff;
   border-radius: 56px;
-  background-color: #ff0000;
+  padding: 20px 40px;
+}
+.app-container button.glass:hover::before {
+  left: 100%;
+}
+.app-container button.glass::before {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transition: left 300ms ease-in-out;
 }
 .app-container button.hmm {
   border: none;
