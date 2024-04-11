@@ -6,176 +6,70 @@
   box-sizing: border-box;
 }
 
-body {
-  width: 100%;
-  min-height: 100vh;
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #3e3e3e;
-  color: #fefefe;
+  background-color: #333;
+  color: #FEFEFE;
+}
+
+body {
   font-family: "Ubuntu", sans-serif;
-  overflow: hidden;
+  font-size: 1.6rem;
 }
 
 h1 {
   text-align: center;
-  font-size: 3.2rem;
-  margin: 2rem 0;
+  height: 100px;
+  line-height: 100px;
 }
 
 .app-container {
-  padding: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #222;
-  box-shadow: 0 0 15px rgba(0, 140, 255, 0.5);
+  height: calc(100vh - 100px);
 }
-.app-container button {
-  position: relative;
-  margin: 20px;
-  padding: 15px 30px;
-  background: none;
-  border: 2px solid #fff;
-  border-radius: 56px;
-  color: #fff;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  overflow: hidden;
+
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1.6em;
+  border: 2px solid transparent;
+  background-color: #333;
   cursor: pointer;
 }
-.app-container button::before, .app-container button::after {
-  position: absolute;
+.burger-btn__box {
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+.burger-btn__bars, .burger-btn__bars::before, .burger-btn__bars::after {
   content: "";
-  display: block;
-}
-.app-container button.slide {
-  color: #000;
-  background-color: rgb(255, 216, 20);
-  border: none;
-  text-transform: none;
-  width: 210px;
-  height: 60px;
-}
-.app-container button.slide span {
   position: absolute;
-  transform: translate(-50%, -50%);
-}
-.app-container button.slide span:first-child {
-  top: 50%;
-  left: 50%;
-  transition: all 500ms ease-in-out;
-}
-.app-container button.slide span:nth-child(2) {
-  left: -50%;
-  top: 0;
-  width: 100%;
-  transition: left 500ms ease-in-out, top 500ms ease-in-out;
-  transition-delay: 500ms;
-}
-.app-container button.slide:hover span:first-child {
-  transform: blur(5px);
-  opacity: 0;
-  top: 100%;
-  left: 100%;
-}
-.app-container button.slide:hover span:nth-child(2) {
-  left: 50%;
-  top: 50%;
-}
-.app-container button.slice {
-  border: none;
-  border-radius: 56px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  background-color: rgb(0, 172, 238);
-  text-transform: none;
-  z-index: 0;
-}
-.app-container button.slice::before, .app-container button.slice::after {
-  width: 100%;
-  height: 100%;
-  background-color: #008cff;
-  z-index: -1;
-  transition: left 500ms ease-in-out, right 500ms ease-in-out;
-}
-.app-container button.slice::before {
-  left: -100%;
-  top: -50%;
-}
-.app-container button.slice::after {
-  right: -100%;
-  bottom: -50%;
-}
-.app-container button.slice:hover::before {
-  left: 0;
-}
-.app-container button.slice:hover::after {
   right: 0;
+  height: 3px;
+  background-color: #FEFEFE;
+  transition: width 300ms;
 }
-.app-container button.glass {
-  border: 2px solid #fff;
-  border-radius: 56px;
-  padding: 20px 40px;
-}
-.app-container button.glass:hover::before {
-  left: 100%;
-}
-.app-container button.glass::before {
+.burger-btn__bars {
   top: 0;
-  left: 0;
-  height: 100%;
-  width: 50%;
-  background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-  transition: left 300ms ease-in-out;
-}
-.app-container button.hmm {
-  border: none;
-  border-radius: 4px;
-  text-transform: none;
-  transition: box-shadow 400ms ease-in-out;
-}
-.app-container button.hmm:hover {
-  box-shadow: 2px 2px 0 0 rgb(121, 82, 179), inset 6px 6px 6px 0 rgba(0, 0, 0, 0.4);
-}
-.app-container button.border {
-  border: none;
-  border-radius: 0;
-  text-transform: none;
-  background-color: #000;
-}
-.app-container button.border2 {
-  border-radius: 0;
-  overflow: visible;
-  transition: color 500ms ease-in-out;
-}
-.app-container button.border2::before, .app-container button.border2::after {
   width: 100%;
-  height: 100%;
-  transition: color 500ms, top 500ms, left 500ms, bottom 500ms, right 500ms, border 500ms;
 }
-.app-container button.border2::before {
-  top: 0;
-  left: 0;
+.burger-btn__bars::before {
+  top: 13px;
+  width: 60%;
 }
-.app-container button.border2::after {
-  bottom: 0;
-  right: 0;
+.burger-btn__bars::after {
+  top: 27px;
+  width: 30%;
+  transition-delay: 100ms;
 }
-.app-container button.border2:hover {
-  border-color: transparent;
-  color: rgb(121, 82, 179);
+.burger-btn:focus {
+  border: 2px solid #FEFEFE;
+  border-radius: 8px;
 }
-.app-container button.border2:hover::before {
-  top: -10px;
-  left: -10px;
-  border-top: 3px solid rgb(121, 82, 179);
-  border-left: 3px solid rgb(121, 82, 179);
-}
-.app-container button.border2:hover::after {
-  bottom: -10px;
-  right: -10px;
-  border-bottom: 3px solid rgb(121, 82, 179);
-  border-right: 3px solid rgb(121, 82, 179);
+.burger-btn:focus .burger-btn__bars::before, .burger-btn:focus .burger-btn__bars::after {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
