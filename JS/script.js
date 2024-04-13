@@ -1,8 +1,17 @@
-const pageHeading = document.querySelector("h1");
-const appContainer = document.querySelector(".app-container");
-let headingHeight = pageHeading.offsetHeight;
+const nav = document.querySelector(".nav");
+const navBtn = document.querySelector(".burger-btn");
+const allNavItems = document.querySelectorAll(".nav__item");
 
-document.addEventListener("DOMContentLoaded", () => {
-  headingHeight = pageHeading.offsetHeight;
-  appContainer.style.height = `calc(100vh - ${headingHeight}px)`;
-});
+console.log(allNavItems);
+
+const toggleNavbar = () => {
+  nav.classList.toggle("nav--active");
+
+  allNavItems.forEach((navItem) => {
+    navItem.addEventListener("click", () => {
+      nav.classList.remove("nav--active");
+    });
+  });
+}
+
+navBtn.addEventListener("click", toggleNavbar)
