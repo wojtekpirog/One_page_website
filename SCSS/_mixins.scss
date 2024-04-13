@@ -4,7 +4,14 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  padding: 1.6em;
+  padding: 1.5em;
   border: 2px solid transparent;
-  background-color: colors.$dark;
+  background-color: transparent;
+  z-index: 1;
+}
+
+@mixin bgImg($url) {
+  background-image: colors.$blue-gradient, url($url);
+  background-size: cover;
+  background-position: center;
 }

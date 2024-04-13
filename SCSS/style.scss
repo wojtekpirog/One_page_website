@@ -1,21 +1,12 @@
 @use "./reset";
 @use "./colors";
+@use "./components";
 @use "./mixins" as mixins;
 
 body {
   font-family: "Ubuntu", sans-serif;
   font-size: 1.6rem;
   overflow-y: hidden;
-}
-
-h1 {
-  text-align: center;
-  height: 100px;
-  line-height: 100px;
-}
-
-.app-container {
-  height: calc(100vh - 100px);
 }
 
 .burger-btn {
@@ -63,5 +54,36 @@ h1 {
         width: 100%;
       }
     }
+  }
+}
+
+.header {
+  height: 85vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  @include mixins.bgImg("../assets/images/seychelles-hero.jpg");
+
+  &__title {
+    margin-bottom: .2em;
+    font-size: 4rem;
+    font-weight: 300;
+  }
+  &__text {
+    margin-bottom: 1.5em;
+  }
+  &__btn {
+    padding: .8em 1.6em;
+    background-color: colors.$pure-white;
+    color: colors.$dark;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 }
