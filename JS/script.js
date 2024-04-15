@@ -1,5 +1,5 @@
 let nav;
-let navBtn;
+let burgerBtn;
 let allNavItems;
 
 const main = () => {
@@ -9,21 +9,33 @@ const main = () => {
 
 const prepareElements = () => {
   nav = document.querySelector(".nav");
-  navBtn = document.querySelector(".burger-btn");
+  burgerBtn = document.querySelector(".burger-btn");
   allNavItems = document.querySelectorAll(".nav__item")
 }
 
 const addEventListeners = () => {
-  navBtn.addEventListener("click", toggleNavbar);  
+  burgerBtn.addEventListener("click", toggleNavbar);  
 }
 
 const toggleNavbar = () => {
   nav.classList.toggle("nav--active");
-
+  
   allNavItems.forEach((navItem) => {
     navItem.addEventListener("click", () => {
       nav.classList.remove("nav--active");
     });
+  });
+  
+  handleNavItemAnimation();
+}
+
+const handleNavItemAnimation = () => {
+  let delay = 0;
+
+  allNavItems.forEach((navItem) => {
+    navItem.classList.toggle("nav__item-animation");
+    navItem.style.animationDelay = `${delay}ms`;
+    delay += 100;
   });
 }
 

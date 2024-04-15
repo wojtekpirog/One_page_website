@@ -85,6 +85,11 @@ body {
     color: colors.$pure-white;
     text-decoration: none;
     line-height: 1;
+    
+    &-animation {
+      animation: navItemAnimation 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+      animation-fill-mode: backwards;
+    }
 
     &::before {
       content: "";
@@ -135,6 +140,16 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 500;
+  }
+}
+
+@keyframes navItemAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(30vw);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
