@@ -36,22 +36,24 @@ body {
     &::before {
       top: 13px;
       width: 60%;
+      transition-delay: 100ms;
     }
     &::after {
       top: 27px;
       width: 30%;
-      transition-delay: 100ms;
+      transition-delay: 200ms;
     }
   }
 
   &:focus {
     border: 2px solid colors.$light;
     border-radius: 8px;
+  }
 
-    & .burger-btn__bars {
-      &::before, &::after {
-        width: 100%;
-      }
+  &:hover {
+    .burger-btn__bars::before,
+    .burger-btn__bars::after {
+      width: 100%;
     }
   }
 }

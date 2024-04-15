@@ -47,18 +47,16 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: calc(-100% - 8px);
   width: 100%;
   height: 100%;
-  transform: scale(0);
-  transform-origin: right;
-  transition: transform 300ms, background-color 300ms;
+  background-color: #dfdfdf;
+  transform: skew(-20deg);
+  transition: left 300ms linear;
   z-index: -1;
 }
 .btn-special-animation:hover::before {
-  background-color: #BBB;
-  transform: scale(1);
-  transform-origin: left;
+  left: calc(100% + 8px);
 }
 
 body {
@@ -96,17 +94,19 @@ body {
 .burger-btn__bars::before {
   top: 13px;
   width: 60%;
+  transition-delay: 100ms;
 }
 .burger-btn__bars::after {
   top: 27px;
   width: 30%;
-  transition-delay: 100ms;
+  transition-delay: 200ms;
 }
 .burger-btn:focus {
   border: 2px solid #FEFEFE;
   border-radius: 8px;
 }
-.burger-btn:focus .burger-btn__bars::before, .burger-btn:focus .burger-btn__bars::after {
+.burger-btn:hover .burger-btn__bars::before,
+.burger-btn:hover .burger-btn__bars::after {
   width: 100%;
 }
 

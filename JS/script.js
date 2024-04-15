@@ -1,8 +1,21 @@
-const nav = document.querySelector(".nav");
-const navBtn = document.querySelector(".burger-btn");
-const allNavItems = document.querySelectorAll(".nav__item");
+let nav;
+let navBtn;
+let allNavItems;
 
-console.log(allNavItems);
+const main = () => {
+  prepareElements();
+  addEventListeners();
+}
+
+const prepareElements = () => {
+  nav = document.querySelector(".nav");
+  navBtn = document.querySelector(".burger-btn");
+  allNavItems = document.querySelectorAll(".nav__item")
+}
+
+const addEventListeners = () => {
+  navBtn.addEventListener("click", toggleNavbar);  
+}
 
 const toggleNavbar = () => {
   nav.classList.toggle("nav--active");
@@ -14,4 +27,4 @@ const toggleNavbar = () => {
   });
 }
 
-navBtn.addEventListener("click", toggleNavbar)
+window.addEventListener("DOMContentLoaded", main);                                                    ''
