@@ -177,12 +177,50 @@ body {
   }
 }
 
+/* Hero Section */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 15em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: colors.$pure-white;
+  @include mixins.bgImg("../assets/images/seychelles-hero.jpg");
+
+  &__title, &__text {
+    margin: 2rem 0;
+  }
+
+  &__title {
+    font-size: 4.2rem;
+  }
+
+  &__text {
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+
+  hr {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 768px) {
   .burger-btn {
     top: 40px;
     right: 40px;
+  }
+
+  .nav {
+    &__item {
+      font-size: 3.6rem;
+    }
   }
 
   .header {
@@ -223,22 +261,34 @@ body {
         }
       }
     }
-
     &__img {
       margin-bottom: 0;
     }
-
     &__title {
       font-size: 3.4rem;
     }
-
     &__text {
       font-size: 2rem;
+    }
+  }
+
+  .hero {
+    &__title {
+      font-size: 4.8rem;
+    }
+    &__text {
+      font-size: 2.6rem;
     }
   }
 }
 
 @media (min-width: 992px) {
+  .nav {
+    &__item {
+      font-size: 4.2rem;
+    }
+  }
+
   .header {
     background-image: colors.$blue-gradient, url("../assets/images/seychelles-hero-hq.jpg");
 
@@ -248,7 +298,6 @@ body {
     &__text {
       font-size: 2.4rem;
     }
-
     .white-block {
       width: 50%;
     }
@@ -262,6 +311,20 @@ body {
     }
     &__text {
       font-size: 2.2rem;
+    }
+  }
+
+  .hero {
+    padding: 20em 2em;
+
+    &__title {
+      font-size: 6.2rem;
+    }
+    &__text {
+      font-size: 3rem;
+    }
+    hr {
+      width: 70%;
     }
   }
 }
