@@ -209,6 +209,63 @@ body {
   }
 }
 
+/* Islands Section */
+
+.islands {
+  &__card {
+    margin: 1em 0;
+    height: 450px;
+    position: relative;
+    color: colors.$pure-white;
+    text-align: center;
+    perspective: 1000px;
+
+    &-img {
+      padding: 2em;
+      height: 100%;
+      border-radius: 8px;
+      background-size: cover;
+      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+      @include mixins.bgImg("../assets/images/water-travel-ocean.jpg");
+
+      &--first {
+        background-image: colors.$light-blue-gradient, url("../assets/images/water-travel-ocean.jpg");
+      }
+      &--second {
+        background-image: colors.$blue-gradient, url("../assets/images/boat-coast-palmtree.jpg");
+      }
+      &--third {
+        background-image: colors.$purple-gradient, url("../assets/images/hawaii-palms-pond.jpg");
+      }
+
+      &-title {
+        font-size: 2.8rem;
+      }
+      &-info {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        font-size: 1.8rem;
+
+        i {
+          margin-right: .3em;
+        }
+      }
+    }
+
+    &:hover {
+      .islands__card-img {
+        transform: rotateY(-180deg);
+        opacity: 0;
+      }
+      .islands__card-text {
+        transform: rotateY(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 768px) {
@@ -220,6 +277,7 @@ body {
   .nav {
     &__item {
       font-size: 3.6rem;
+      font-weight: 300;
     }
   }
 
@@ -241,7 +299,7 @@ body {
     &__box {
       flex-direction: row;
       gap: 2rem;
-      margin: 1em 0;
+      margin: 2em 0;
   
       &-img{
         width: 45%;
