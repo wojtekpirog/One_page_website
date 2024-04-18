@@ -49,3 +49,38 @@
     }
   }
 }
+
+.section-padding {
+  padding: 6rem 2rem;
+}
+
+.section__heading {
+  position: relative;
+  margin-bottom: 2em;
+  text-align: center;
+  color: colors.$primary-color;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 8rem 2rem;
+  }
+
+  .section__heading {
+    font-size: 3.6rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .section-padding {
+    padding: 10rem 2rem;
+  }
+
+  .section__heading {
+    font-size: 4.2rem;
+  }
+}
