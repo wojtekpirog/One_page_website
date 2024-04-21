@@ -1,12 +1,20 @@
 @use "./reset";
 @use "./colors";
 @use "./components";
-@use "./fonts";
+@use "./font-faces";
 @use "./mixins" as mixins;
 
+:root {
+  --dancing-script-regular: "DancingScript-Regular", sans-serif;
+  --dancing-script-medium: "DancingScript-Medium", sans-serif;
+  --dancing-script-semibold: "DancingScript-SemiBold", sans-serif;
+  --dancing-script-bold: "DancingScript-Bold", sans-serif;
+  --nunito-regular: "Nunito-Regular", sans-serif;
+  --nunito-semibold: "Nunito-SemiBold", sans-serif;
+}
+
 body {
-  // font-family: "Ubuntu", sans-serif;
-  font-family: "nunitoregular";
+  font-family: var(--nunito-regular);
   font-size: 1.6rem;
 }
 
@@ -128,7 +136,8 @@ body {
 
   &__title {
     margin-bottom: .2em;
-    font-size: 4rem;
+    font-family: var(--dancing-script-bold);
+    font-size: 5rem;
     font-weight: 300;
   }
   &__text {
@@ -157,8 +166,6 @@ body {
 }
 
 .dreams {
-  padding: 6em 2em;
-
   &__box {
     display: flex;
     flex-direction: column;
@@ -184,11 +191,12 @@ body {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 15em 2em;
+  padding: 10em 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: colors.$pure-white;
   @include mixins.bgImg("../assets/images/seychelles-hero.jpg");
 
@@ -197,6 +205,7 @@ body {
   }
 
   &__title {
+    font-family: var(--dancing-script-bold);
     font-size: 4.2rem;
   }
 
@@ -214,6 +223,11 @@ body {
 /* Islands Section */
 
 .islands {
+  &__cards {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__card {
     margin: 1em 0;
     height: 450px;
@@ -242,7 +256,8 @@ body {
       }
 
       &-title {
-        font-size: 2.8rem;
+        font-family: var(--dancing-script-bold);
+        font-size: 3rem;
       }
       &-info {
         position: absolute;
@@ -273,11 +288,13 @@ body {
 
 
       &-title {
+        width: 100%;
         position: absolute;
         left: 50%;
         top: 2.75rem;
         transform: translateX(-50%);
-        font-size: 2.8rem;
+        font-family: var(--dancing-script-bold);
+        font-size: 2.6rem;
       }
 
       &-list {
@@ -297,10 +314,19 @@ body {
       }
 
       &-btn {
-        position: absolute;
-        bottom: 2em;
+        width: 80%;
+        bottom: -2em;
         left: 50%;
         transform: translateX(-50%);
+        padding: 1em;
+        border: none;
+        border-radius: 4px;
+        background-color: colors.$green-color;
+        cursor: pointer;
+
+        &::before {
+          background-color: colors.$green-color-hover;
+        }
       }
     }
 
@@ -317,7 +343,22 @@ body {
   }
 }
 
-/* MEDIA QUERIES */
+.offers {
+  overflow-x: hidden;
+}
+
+/*** MEDIA QUERIES ***/
+
+@media (min-width: 576px) {
+  .hero {
+    padding: 15em 2em;
+  }
+  .islands {
+    &__card-img-title {
+      font-size: 3.6rem;
+    }
+  }
+}
 
 @media (min-width: 768px) {
   .burger-btn {
@@ -345,8 +386,6 @@ body {
   }
 
   .dreams {
-    padding: 8em 2em;
-
     &__box {
       flex-direction: row;
       gap: 2rem;
@@ -387,6 +426,18 @@ body {
     }
     &__text {
       font-size: 2.6rem;
+    }
+  }
+
+  .islands {
+    &__cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__card {
+      width: 40%;
+      margin: 1em;
     }
   }
 }
@@ -434,6 +485,12 @@ body {
     }
     hr {
       width: 70%;
+    }
+  }
+
+  .islands {
+    &__card {
+      width: 30%;
     }
   }
 }

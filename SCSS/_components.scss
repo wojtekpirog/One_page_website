@@ -51,7 +51,7 @@
 }
 
 .section-padding {
-  padding: 6rem 2rem;
+  padding: 6em 2em;
 }
 
 .section__heading {
@@ -65,9 +65,11 @@
   letter-spacing: 1px;
 }
 
+/*** MEDIA QUERIES ***/
+
 @media (min-width: 768px) {
   .section-padding {
-    padding: 8rem 2rem;
+    padding: 8em 2em;
   }
 
   .section__heading {

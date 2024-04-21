@@ -60,7 +60,7 @@ body {
 }
 
 .section-padding {
-  padding: 6rem 2rem;
+  padding: 6em 2em;
 }
 
 .section__heading {
@@ -74,9 +74,10 @@ body {
   letter-spacing: 1px;
 }
 
+/*** MEDIA QUERIES ***/
 @media (min-width: 768px) {
   .section-padding {
-    padding: 8rem 2rem;
+    padding: 8em 2em;
   }
   .section__heading {
     font-size: 3.6rem;
@@ -91,19 +92,58 @@ body {
   }
 }
 @font-face {
-  font-family: "nunitoregular";
+  font-family: "Nunito-Regular";
   src: url("../fonts/Nunito-Regular.woff") format("woff");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: "nunitosemibold";
+  font-family: "Nunito-SemiBold";
   src: url("../fonts/Nunito-SemiBold.woff") format("woff");
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
+@font-face {
+  font-family: "DancingScript-Regular";
+  src: url("../fonts/DancingScript-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DancingScript-Medium";
+  src: url("../fonts/DancingScript-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DancingScript-SemiBold";
+  src: url("../fonts/DancingScript-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DancingScript-Bold";
+  src: url("../fonts/DancingScript-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --dancing-script-regular: "DancingScript-Regular", sans-serif;
+  --dancing-script-medium: "DancingScript-Medium", sans-serif;
+  --dancing-script-semibold: "DancingScript-SemiBold", sans-serif;
+  --dancing-script-bold: "DancingScript-Bold", sans-serif;
+  --nunito-regular: "Nunito-Regular", sans-serif;
+  --nunito-semibold: "Nunito-SemiBold", sans-serif;
+}
+
 body {
-  font-family: "nunitoregular";
+  font-family: var(--nunito-regular);
   font-size: 1.6rem;
 }
 
@@ -216,7 +256,8 @@ body {
 }
 .header__title {
   margin-bottom: 0.2em;
-  font-size: 4rem;
+  font-family: var(--dancing-script-bold);
+  font-size: 5rem;
   font-weight: 300;
 }
 .header__text {
@@ -243,9 +284,6 @@ body {
     transform: translateX(0);
   }
 }
-.dreams {
-  padding: 6em 2em;
-}
 .dreams__box {
   display: flex;
   flex-direction: column;
@@ -269,11 +307,12 @@ body {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 15em 2em;
+  padding: 10em 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: #FFF;
   background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.6), rgba(42, 10, 184, 0.6)), url("../assets/images/seychelles-hero.jpg");
   background-size: cover;
@@ -284,6 +323,7 @@ body {
   margin: 2rem 0;
 }
 .hero__title {
+  font-family: var(--dancing-script-bold);
   font-size: 4.2rem;
 }
 .hero__text {
@@ -296,6 +336,10 @@ body {
 }
 
 /* Islands Section */
+.islands__cards {
+  display: flex;
+  flex-direction: column;
+}
 .islands__card {
   margin: 1em 0;
   height: 450px;
@@ -323,7 +367,8 @@ body {
   background-image: linear-gradient(45deg, rgba(190, 10, 214, 0.75), rgba(68, 0, 255, 0.75)), url("../assets/images/hawaii-palms-pond.jpg");
 }
 .islands__card-img-title {
-  font-size: 2.8rem;
+  font-family: var(--dancing-script-bold);
+  font-size: 3rem;
 }
 .islands__card-img-info {
   position: absolute;
@@ -350,11 +395,13 @@ body {
   opacity: 0;
 }
 .islands__card-info-title {
+  width: 100%;
   position: absolute;
   left: 50%;
   top: 2.75rem;
   transform: translateX(-50%);
-  font-size: 2.8rem;
+  font-family: var(--dancing-script-bold);
+  font-size: 2.6rem;
 }
 .islands__card-info-list {
   list-style: none;
@@ -370,10 +417,18 @@ body {
   border-bottom: none;
 }
 .islands__card-info-btn {
-  position: absolute;
-  bottom: 2em;
+  width: 80%;
+  bottom: -2em;
   left: 50%;
   transform: translateX(-50%);
+  padding: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #00ffaa;
+  cursor: pointer;
+}
+.islands__card-info-btn::before {
+  background-color: #0fe29c;
 }
 .islands__card:hover .islands__card-img {
   transform: rotateY(-180deg);
@@ -384,7 +439,19 @@ body {
   opacity: 1;
 }
 
-/* MEDIA QUERIES */
+.offers {
+  overflow-x: hidden;
+}
+
+/*** MEDIA QUERIES ***/
+@media (min-width: 576px) {
+  .hero {
+    padding: 15em 2em;
+  }
+  .islands__card-img-title {
+    font-size: 3.6rem;
+  }
+}
 @media (min-width: 768px) {
   .burger-btn {
     top: 40px;
@@ -402,9 +469,6 @@ body {
   }
   .header__btn {
     font-size: 1.8rem;
-  }
-  .dreams {
-    padding: 8em 2em;
   }
   .dreams__box {
     flex-direction: row;
@@ -440,6 +504,15 @@ body {
   }
   .hero__text {
     font-size: 2.6rem;
+  }
+  .islands__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .islands__card {
+    width: 40%;
+    margin: 1em;
   }
 }
 @media (min-width: 992px) {
@@ -478,5 +551,8 @@ body {
   }
   .hero hr {
     width: 70%;
+  }
+  .islands__card {
+    width: 30%;
   }
 }/*# sourceMappingURL=style.css.map */
