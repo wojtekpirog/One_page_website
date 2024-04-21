@@ -90,8 +90,20 @@ body {
     font-size: 4.2rem;
   }
 }
+@font-face {
+  font-family: "nunitoregular";
+  src: url("../fonts/Nunito-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "nunitosemibold";
+  src: url("../fonts/Nunito-SemiBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "nunitoregular";
   font-size: 1.6rem;
 }
 
@@ -298,10 +310,8 @@ body {
   border-radius: 8px;
   background-size: cover;
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.6), rgba(42, 10, 184, 0.6)), url("../assets/images/water-travel-ocean.jpg");
-  background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-size: cover;
 }
 .islands__card-img--first {
   background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.75), rgba(8, 24, 255, 0.75)), url("../assets/images/water-travel-ocean.jpg");
@@ -324,11 +334,52 @@ body {
 .islands__card-img-info i {
   margin-right: 0.3em;
 }
+.islands__card-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: radial-gradient(circle at top right, rgb(0, 78, 255) 0%, rgb(0, 212, 255) 100%);
+  border-radius: 8px;
+  transform: rotateY(180deg);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  opacity: 0;
+}
+.islands__card-info-title {
+  position: absolute;
+  left: 50%;
+  top: 2.75rem;
+  transform: translateX(-50%);
+  font-size: 2.8rem;
+}
+.islands__card-info-list {
+  list-style: none;
+  margin: 0 auto;
+  width: 70%;
+}
+.islands__card-info-list-item {
+  padding: 1em 0;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #FEFEFE;
+}
+.islands__card-info-list-item:last-child {
+  border-bottom: none;
+}
+.islands__card-info-btn {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .islands__card:hover .islands__card-img {
   transform: rotateY(-180deg);
   opacity: 0;
 }
-.islands__card:hover .islands__card-text {
+.islands__card:hover .islands__card-info {
   transform: rotateY(0);
   opacity: 1;
 }

@@ -1,10 +1,12 @@
 @use "./reset";
 @use "./colors";
 @use "./components";
+@use "./fonts";
 @use "./mixins" as mixins;
 
 body {
-  font-family: "Ubuntu", sans-serif;
+  // font-family: "Ubuntu", sans-serif;
+  font-family: "nunitoregular";
   font-size: 1.6rem;
 }
 
@@ -226,7 +228,8 @@ body {
       border-radius: 8px;
       background-size: cover;
       transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-      @include mixins.bgImg("../assets/images/water-travel-ocean.jpg");
+      background-position: center;
+      background-size: cover;
 
       &--first {
         background-image: colors.$light-blue-gradient, url("../assets/images/water-travel-ocean.jpg");
@@ -253,12 +256,60 @@ body {
       }
     }
 
+    &-info {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: colors.$light-blue-gradient-solid;
+      border-radius: 8px;
+      transform: rotateY(180deg);
+      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+      opacity: 0;
+
+
+      &-title {
+        position: absolute;
+        left: 50%;
+        top: 2.75rem;
+        transform: translateX(-50%);
+        font-size: 2.8rem;
+      }
+
+      &-list {
+        list-style: none;
+        margin: 0 auto;
+        width: 70%;
+
+        &-item {
+          padding: 1em 0;
+          font-size: 1.6rem;
+          border-bottom: 2px solid colors.$light;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+
+      &-btn {
+        position: absolute;
+        bottom: 2em;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
     &:hover {
       .islands__card-img {
         transform: rotateY(-180deg);
         opacity: 0;
       }
-      .islands__card-text {
+      .islands__card-info {
         transform: rotateY(0);
         opacity: 1;
       }
