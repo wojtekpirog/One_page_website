@@ -11,24 +11,23 @@
   height: 40px;
   width: 60%;
   background-color: colors.$pure-white;
+  transform: skew(45deg);
 
   &-left {
     bottom: 0;
     left: -50px;
-    transform: skew(45deg);
   }
 
   &-right {
     top: 0;
     right: -50px;
-    transform: skew(45deg);
   }
 }
 
 .btn-special-animation {
   position: relative;
-  overflow: hidden; // Nie chcę, aby cokolwiek "wyciekało" poza przycisk (ani ::after, ani ::before)
-  z-index: 0; // Tło przycisku nie może przysłonić tekstu
+  overflow: hidden;
+  z-index: 0;
 
   &::before {
     content: "";
@@ -39,8 +38,8 @@
     height: 100%;
     background-color: colors.$less-light;
     transform: skew(-20deg);
-    transition: left 300ms linear;
-    z-index: -1; // Tło przycisku musi być na niższej warstwie, aby nie przykryć tekstu
+    transition: left 300ms ease-in-out;
+    z-index: -1; // `::before` musi być pod warstwą tekstu, aby tego tekstu na przycisku nie przykryć
   }
 
   &:hover {
