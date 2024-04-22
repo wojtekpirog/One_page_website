@@ -39,4 +39,4 @@ const handleNavItemAnimation = () => {
   });
 }
 
-window.addEventListener("DOMContentLoaded", main);                                                    ''
+window.addEventListener("DOMContentLoaded", main);

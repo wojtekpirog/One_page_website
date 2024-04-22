@@ -569,8 +569,20 @@ body {
   .offers__option-img {
     width: 50%;
   }
+  .offers__option-img--right {
+    order: 1;
+  }
+  .offers__option-img--right .offers__img {
+    border-radius: 0 0.5em 0.5em 0;
+  }
+  .offers__option-heading {
+    font-size: 3.6rem;
+  }
   .offers__option-info {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .offers__img {
     border-radius: 0.5em 0 0 0.5em;
@@ -615,5 +627,11 @@ body {
   }
   .islands__card {
     width: 30%;
+  }
+  .offers__option {
+    height: 320px;
+  }
+  .offers__option-text {
+    font-size: 1.8rem;
   }
 }/*# sourceMappingURL=style.css.map */
