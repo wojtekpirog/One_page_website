@@ -3,6 +3,7 @@
 @use "./components";
 @use "./font-faces";
 @use "./mixins" as mixins;
+@use "./components/team";
 
 :root {
   --dancing-script-regular: "DancingScript-Regular", sans-serif;
@@ -75,7 +76,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-image: colors.$blue-gradient-solid;
   transform: translateX(100%);
