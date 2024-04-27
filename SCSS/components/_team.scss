@@ -8,8 +8,8 @@
 
   &__card { 
     position: relative;
-    height: 800px;
-    margin: 1em 2em;
+    height: 450px;
+    margin: 1em;
     border-radius: 14px;
     text-align: center;
     background-position: center;
@@ -71,15 +71,23 @@
     }
 
     &--one {
-      background-image: url("../../assets/images/reviewer1.jpg");
+      background-image: url("../../assets/images/teammember1.jpg");
     }
 
     &--two {
-      background-image: url("../../assets/images/reviewer2.jpg");
+      background-image: url("../../assets/images/teammember2.jpg");
     }
     
     &--three {
-      background-image: url("../../assets/images/reviewer3.jpg");
+      background-image: url("../../assets/images/teammember3.jpg");
+    }
+  }
+}
+
+@media (min-width: 400px) {
+  .team {
+    &__card {
+      height: 600px;
     }
   }
 }
@@ -93,9 +101,7 @@
     }
 
     &__card {
-      height: 600px;
       width: 40%;
-      margin: 1em;
     }
   }
 }

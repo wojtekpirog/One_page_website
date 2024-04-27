@@ -1,0 +1,48 @@
+@use "../colors";
+
+.opinions {
+  &__box {
+    min-height: 260px;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 10px colors.$box-shadow;
+    transition: transform 300ms linear;
+
+    &:hover {
+      transform: scale(.95);
+    }
+
+    &-img {
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border-radius: 50%;
+      object-fit: cover;      
+    }
+
+    &-quote {
+      margin-bottom: 1em;
+      padding-top: 6px;
+      padding-left: 14px;
+      font-size: 5rem;
+      color: colors.$primary-color;
+      line-height: 1;
+    }
+
+    &-text {
+      margin-bottom: .5em;
+    }
+
+    &-author {
+      font-size: 1.8rem;
+    }
+  }
+
+  // &__img {
+  //   object-fit: cover;
+  // }
+}

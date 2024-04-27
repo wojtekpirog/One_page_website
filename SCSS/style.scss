@@ -4,6 +4,7 @@
 @use "./font-faces";
 @use "./mixins" as mixins;
 @use "./components/team";
+@use "./components/opinions";
 
 :root {
   --dancing-script-regular: "DancingScript-Regular", sans-serif;
