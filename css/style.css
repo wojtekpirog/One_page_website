@@ -226,10 +226,19 @@ body {
     width: 30%;
   }
 }
+.opinions {
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5));
+}
+.opinions .section__heading {
+  color: #FFF;
+}
 .opinions__box {
   min-height: 260px;
   margin: 1em;
   padding: 1em;
+  background-color: #FFF;
   border-radius: 10px;
   position: relative;
   box-shadow: 0 0 10px rgba(40, 40, 40, 0.5);
@@ -263,6 +272,64 @@ body {
   font-size: 1.8rem;
 }
 
+.contact {
+  position: relative;
+}
+.contact__form, .contact__form-top, .contact__form-bottom {
+  display: flex;
+  flex-direction: column;
+}
+.contact__form-label {
+  margin-bottom: 0.35em;
+  font-family: var(--nunito-semibold);
+  font-size: 1.8rem;
+}
+.contact__form-input {
+  margin-bottom: 2em;
+  padding: 0.8em 1.6em;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  font-family: var(--open-sans-regular);
+}
+.contact__form-textarea {
+  margin-bottom: 2em;
+  padding: 0.8em 1.6em;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  font-family: var(--open-sans-regular);
+  resize: vertical;
+  min-height: 150px;
+  padding: 0.8em;
+}
+.contact__form-bottom {
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+}
+.contact__form-btn {
+  display: block;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.8rem;
+  font-family: var(--nunito-semibold);
+  color: #FFF;
+}
+.contact__form-btn--reset {
+  background-color: #8d0000;
+}
+.contact__form-btn--reset::before {
+  background-color: #5f0000;
+}
+.contact__form-btn--submit {
+  background-color: #1755e7;
+}
+.contact__form-btn--submit::before {
+  background-color: #164b9b;
+}
+
 :root {
   --dancing-script-regular: "DancingScript-Regular", sans-serif;
   --dancing-script-medium: "DancingScript-Medium", sans-serif;
@@ -284,7 +351,7 @@ body {
   padding: 1.5em;
   border: 2px solid transparent;
   background-color: transparent;
-  z-index: 2;
+  z-index: 3;
   cursor: pointer;
 }
 .burger-btn__box {
@@ -335,7 +402,7 @@ body {
   background-image: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
   transform: translateX(100%);
   transition: 500ms cubic-bezier(0.65, 0.05, 0.36, 1);
-  z-index: 1;
+  z-index: 2;
 }
 .nav--active {
   transform: translateX(0);
@@ -379,7 +446,7 @@ body {
   text-align: center;
   padding: 2rem;
   color: #FEFEFE;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.6), rgba(42, 10, 184, 0.6)), url("../assets/images/seychelles-hero.jpg");
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -444,7 +511,7 @@ body {
   align-items: center;
   text-align: center;
   color: #FFF;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.6), rgba(42, 10, 184, 0.6)), url("../assets/images/seychelles-hero.jpg");
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -488,17 +555,17 @@ body {
   background-size: cover;
 }
 .islands__card-img--first {
-  background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.75), rgba(8, 24, 255, 0.75)), url("../assets/images/water-travel-ocean.jpg");
+  background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.5), rgba(8, 24, 255, 0.5)), url("../assets/images/bali-island.jpg");
 }
 .islands__card-img--second {
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.6), rgba(42, 10, 184, 0.6)), url("../assets/images/boat-coast-palmtree.jpg");
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/japanese-island.jpg");
 }
 .islands__card-img--third {
-  background-image: linear-gradient(45deg, rgba(190, 10, 214, 0.75), rgba(68, 0, 255, 0.75)), url("../assets/images/hawaii-palms-pond.jpg");
+  background-image: linear-gradient(45deg, rgba(190, 10, 214, 0.5), rgba(68, 0, 255, 0.5)), url("../assets/images/hawaii-palms-pond.jpg");
 }
 .islands__card-img-title {
   font-family: var(--dancing-script-bold);
-  font-size: 3rem;
+  font-size: 3.6rem;
 }
 .islands__card-img-info {
   position: absolute;
@@ -573,7 +640,7 @@ body {
 .offers {
   position: relative;
   overflow-x: hidden;
-  background-image: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
+  background: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
 }
 .offers .section__heading {
   color: #FFF;
@@ -724,7 +791,7 @@ body {
     font-size: 4.2rem;
   }
   .header {
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.6), rgba(42, 10, 184, 0.6)), url("../assets/images/seychelles-hero-hq.jpg");
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero-hq.jpg");
   }
   .header__title {
     font-size: 6rem;

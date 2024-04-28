@@ -1,10 +1,18 @@
 @use "../colors";
+@use "../mixins";
 
 .opinions {
+  @include mixins.sectionBackground(colors.$blue-gradient);
+
+  .section__heading {
+    color: colors.$pure-white;
+  }
+
   &__box {
     min-height: 260px;
     margin: 1em;
     padding: 1em;
+    background-color: colors.$pure-white;
     border-radius: 10px;
     position: relative;
     box-shadow: 0 0 10px colors.$box-shadow;
@@ -41,8 +49,4 @@
       font-size: 1.8rem;
     }
   }
-
-  // &__img {
-  //   object-fit: cover;
-  // }
 }

@@ -7,11 +7,13 @@ $primary-color: #1755e7;
 $secondary-color: #164b9b;
 $green-color: #00ffaa;
 $green-color-hover: #0fe29c;
+$danger: #8d0000;
+$danger-hover: #5f0000;
 $box-shadow: rgba(40, 40, 40, .5);
 $text-shadow: #000;
 
-$light-blue-gradient: linear-gradient(45deg, rgba(8, 206, 255, 0.75), rgba(8, 24, 255, 0.75));
-$blue-gradient: linear-gradient(45deg, rgba(20, 105, 241, 0.6), rgba(42, 10, 184, 0.6));
-$purple-gradient: linear-gradient(45deg, rgba(190, 10, 214, 0.75), rgba(68, 0, 255, 0.75));
+$light-blue-gradient: linear-gradient(45deg, rgba(8, 206, 255, .5), rgba(8, 24, 255, .5));
+$blue-gradient: linear-gradient(45deg, rgba(20, 105, 241, .5), rgba(42, 10, 184, .5));
+$purple-gradient: linear-gradient(45deg, rgba(190, 10, 214, .5), rgba(68, 0, 255, .5));
 $blue-gradient-solid: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
 $light-blue-gradient-solid: radial-gradient(circle at top right, rgb(0, 78, 255) 0%, rgb(0, 212, 255) 100%);

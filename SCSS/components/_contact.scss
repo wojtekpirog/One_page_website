@@ -1,0 +1,62 @@
+@use "../colors";
+@use "../mixins";
+
+.contact {
+  position: relative;
+  
+  &__form, &__form-top, &__form-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form {
+    &-label {
+      margin-bottom: .35em;
+      font-family: var(--nunito-semibold);
+      font-size: 1.8rem;
+    }
+
+    &-input {
+      @include mixins.contactForm;
+    }
+
+    &-textarea {
+      @include mixins.contactForm;
+      resize: vertical;
+      min-height: 150px;
+      padding: .8em;
+    }
+
+    &-bottom {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2em;
+    }
+
+    &-btn {
+      display: block;
+      padding: 1em 2em;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.8rem;
+      font-family: var(--nunito-semibold);
+      color: colors.$pure-white;
+
+      &--reset {
+        background-color: colors.$danger;
+
+        &::before {
+          background-color: colors.$danger-hover;
+        }
+      }
+
+      &--submit {
+        background-color: colors.$primary-color;
+
+        &::before {
+          background-color: colors.$secondary-color;
+        }
+      }
+    }
+  }
+}

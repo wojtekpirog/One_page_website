@@ -7,7 +7,7 @@
   padding: 1.5em;
   border: 2px solid transparent;
   background-color: transparent;
-  z-index: 2;
+  z-index: 3;
 }
 
 @mixin bgImg($url) {
@@ -15,4 +15,19 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+@mixin sectionBackground($color) {
+  position: relative;
+  overflow-x: hidden;
+  background: $color;
+}
+
+@mixin contactForm {
+  margin-bottom: 2em;
+  padding: .8em 1.6em;
+  border: 2px solid colors.$dark;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  font-family: var(--open-sans-regular);
 }
