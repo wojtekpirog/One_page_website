@@ -3,6 +3,15 @@
 
 .contact {
   position: relative;
+  background-color: colors.$less-light;
+
+  &.section-padding {
+    padding-bottom: calc(6em + 40px);
+  }
+
+  .white-block-left {
+    background-color: colors.$dark;
+  }
   
   &__form, &__form-top, &__form-bottom {
     display: flex;
@@ -35,7 +44,7 @@
 
     &-btn {
       display: block;
-      padding: 1em 2em;
+      padding: .7em 1.4em;
       border: none;
       border-radius: 4px;
       font-size: 1.8rem;
@@ -58,5 +67,11 @@
         }
       }
     }
+  }
+}
+
+@media (min-width: 375px) {
+  .contact__form-btn {
+    padding: 1em 2em;
   }
 }

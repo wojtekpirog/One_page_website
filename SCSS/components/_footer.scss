@@ -1,0 +1,119 @@
+@use "../colors";
+
+.footer {
+  color: colors.$pure-white;
+  background-color: colors.$dark;
+
+  .wrapper {
+    padding: 4em 2em 2em;
+  }
+
+  &__box {
+    &-title {
+      margin-bottom: 1em;
+      font-family: var(--dancing-script-regular);
+      font-size: 3.2rem;
+    }
+
+    &-social {
+      margin: 2em 0;
+
+      &-link {
+        padding: 0 .3em;
+        color: colors.$pure-white;
+        font-size: 4.2rem;
+        transition: color 300ms linear;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+
+        &:hover {
+          &:first-child {
+            color: colors.$facebook;
+          }
+          &:nth-child(2) {
+            color: colors.$twitter;
+          }
+          &:nth-child(3) {
+            color: colors.$instagram;
+          }
+        }
+      }
+    }
+
+    &-desktop {
+      display: none;
+    }
+
+    &-list {
+      list-style-type: none;
+    }
+  }
+
+  &__bottom-text {
+    padding: 2em 0;
+    text-align: center;
+  }
+}
+
+@media (min-width: 375px) {
+  .footer__box-title {
+    font-size: 3.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    &__boxes {
+      display: flex;
+    }
+
+    &__box {
+      margin: 0 2em;
+      width: 25%;
+
+      &:first-child {
+        width: 50%;
+      }
+
+      &-title {
+        font-size: 2.6rem;
+      }
+
+      &-list-item {
+        margin-bottom: .8em;
+
+        a {
+          color: colors.$pure-white;
+          text-decoration: none;
+          transition: color 300ms linear;
+
+          &:hover {
+            color: colors.$footer-link-hover;
+          }
+        }
+      }
+    }
+
+    &__box-desktop {
+      display: block;
+    }
+
+    &__bottom-text {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .footer {
+    &__box-title {
+      font-size: 3.2rem;
+    }
+  }
+}

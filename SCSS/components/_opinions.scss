@@ -4,6 +4,10 @@
 .opinions {
   @include mixins.sectionBackground(colors.$blue-gradient);
 
+  .white-block-left {
+    background-color: colors.$less-light;
+  }
+
   .section__heading {
     color: colors.$pure-white;
   }
