@@ -1,0 +1,67 @@
+@use "../colors";
+@use "../mixins";
+
+.header {
+  height: 85vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: colors.$light;
+  @include mixins.bgImg("../assets/images/seychelles-hero.jpg");
+
+  &__title {
+    margin-bottom: .2em;
+    font-family: var(--dancing-script-bold);
+    font-size: 5rem;
+    font-weight: 300;
+  }
+
+  &__text {
+    margin-bottom: 1.5em;
+  }
+  
+  &__btn {
+    padding: .8em 1.6em;
+    background-color: colors.$pure-white;
+    color: colors.$dark;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    &__title {
+      font-size: 5rem;
+    }
+    &__text {
+      font-size: 2rem;
+    }    
+    &__btn {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    background-image: colors.$blue-gradient, url("../assets/images/seychelles-hero-hq.jpg");
+
+    &__title {
+      font-size: 6rem;
+    }
+    &__text {
+      font-size: 2.4rem;
+    }
+    .white-block {
+      width: 50%;
+    }
+  }
+}

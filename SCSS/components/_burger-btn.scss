@@ -1,0 +1,59 @@
+@use "../colors";
+@use "../mixins";
+
+.burger-btn {
+  @include mixins.burgerBtn;
+  cursor: pointer;
+
+  &__box {
+    position: relative;
+    width: 40px;
+    height: 30px;
+  }
+
+  &__bars,
+  &__bars::before,
+  &__bars::after {
+    content: "";
+    position: absolute;
+    right: 0;    
+    height: 3px;
+    background-color: colors.$light;
+    transition: width 300ms;
+  }
+
+  &__bars {
+    top: 0;
+    width: 100%;
+
+    &::before {
+      top: 13px;
+      width: 60%;
+      transition-delay: 100ms;
+    }
+    &::after {
+      top: 27px;
+      width: 30%;
+      transition-delay: 200ms;
+    }
+  }
+
+  &:focus {
+    border: 2px solid colors.$light;
+    border-radius: 8px;
+  }
+
+  &:hover {
+    .burger-btn__bars::before,
+    .burger-btn__bars::after {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .burger-btn {
+    top: 40px;
+    right: 40px;
+  }
+}

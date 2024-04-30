@@ -11,10 +11,48 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  color: #333;
+@font-face {
+  font-family: "Nunito-Regular";
+  src: url("../fonts/Nunito-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-
+@font-face {
+  font-family: "Nunito-SemiBold";
+  src: url("../fonts/Nunito-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DancingScript-Regular";
+  src: url("../fonts/DancingScript-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DancingScript-Medium";
+  src: url("../fonts/DancingScript-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DancingScript-SemiBold";
+  src: url("../fonts/DancingScript-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DancingScript-Bold";
+  src: url("../fonts/DancingScript-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 .wrapper {
   margin: 0 auto;
   width: 100%;
@@ -90,47 +128,512 @@ body {
     font-size: 4.2rem;
   }
 }
-@font-face {
-  font-family: "Nunito-Regular";
-  src: url("../fonts/Nunito-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1.5em;
+  border: 2px solid transparent;
+  background-color: transparent;
+  z-index: 3;
+  cursor: pointer;
 }
-@font-face {
-  font-family: "Nunito-SemiBold";
-  src: url("../fonts/Nunito-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+.burger-btn__box {
+  position: relative;
+  width: 40px;
+  height: 30px;
 }
-@font-face {
-  font-family: "DancingScript-Regular";
-  src: url("../fonts/DancingScript-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+.burger-btn__bars, .burger-btn__bars::before, .burger-btn__bars::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 3px;
+  background-color: #fefefe;
+  transition: width 300ms;
 }
-@font-face {
-  font-family: "DancingScript-Medium";
-  src: url("../fonts/DancingScript-Medium.woff") format("woff");
+.burger-btn__bars {
+  top: 0;
+  width: 100%;
+}
+.burger-btn__bars::before {
+  top: 13px;
+  width: 60%;
+  transition-delay: 100ms;
+}
+.burger-btn__bars::after {
+  top: 27px;
+  width: 30%;
+  transition-delay: 200ms;
+}
+.burger-btn:focus {
+  border: 2px solid #fefefe;
+  border-radius: 8px;
+}
+.burger-btn:hover .burger-btn__bars::before,
+.burger-btn:hover .burger-btn__bars::after {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .burger-btn {
+    top: 40px;
+    right: 40px;
+  }
+}
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
+  transform: translateX(100%);
+  transition: 500ms cubic-bezier(0.65, 0.05, 0.36, 1);
+  z-index: 2;
+}
+.nav--active {
+  transform: translateX(0);
+}
+.nav__item {
+  position: relative;
+  display: block;
+  margin: 0.5em 0;
+  padding: 0.5em 1em;
+  font-size: 2.8rem;
+  color: #FFF;
+  text-decoration: none;
+  line-height: 1;
+}
+.nav__item-animation {
+  animation: navItemAnimation 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  animation-fill-mode: backwards;
+}
+.nav__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #FFF;
+  transform: scale(0);
+  transition: transform 250ms linear;
+}
+.nav__item:hover::before {
+  transform: scale(1);
+}
+
+@keyframes navItemAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(30vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (min-width: 768px) {
+  .nav__item {
+    font-size: 3.6rem;
+    font-weight: 300;
+  }
+}
+@media (min-width: 992px) {
+  .nav__item {
+    font-size: 4.8rem;
+  }
+}
+.header {
+  height: 85vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: #fefefe;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.header__title {
+  margin-bottom: 0.2em;
+  font-family: var(--dancing-script-bold);
+  font-size: 5rem;
+  font-weight: 300;
+}
+.header__text {
+  margin-bottom: 1.5em;
+}
+.header__btn {
+  padding: 0.8em 1.6em;
+  background-color: #FFF;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
   font-weight: 500;
-  font-style: normal;
-  font-display: swap;
 }
-@font-face {
-  font-family: "DancingScript-SemiBold";
-  src: url("../fonts/DancingScript-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+
+@media (min-width: 768px) {
+  .header__title {
+    font-size: 5rem;
+  }
+  .header__text {
+    font-size: 2rem;
+  }
+  .header__btn {
+    font-size: 1.8rem;
+  }
 }
-@font-face {
-  font-family: "DancingScript-Bold";
-  src: url("../fonts/DancingScript-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+@media (min-width: 992px) {
+  .header {
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero-hq.jpg");
+  }
+  .header__title {
+    font-size: 6rem;
+  }
+  .header__text {
+    font-size: 2.4rem;
+  }
+  .header .white-block {
+    width: 50%;
+  }
+}
+.dreams__box {
+  display: flex;
+  flex-direction: column;
+}
+.dreams__img {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+.dreams__title {
+  margin-bottom: 1rem;
+  font-size: 2.8rem;
+}
+.dreams__text {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: #4b4b4b;
+}
+
+@media (min-width: 768px) {
+  .dreams__box {
+    flex-direction: row;
+    gap: 2rem;
+    margin: 2em 0;
+  }
+  .dreams__box-img {
+    width: 45%;
+  }
+  .dreams__box-img--two {
+    order: 1;
+  }
+  .dreams__box-text {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dreams__box-text--two {
+    text-align: right;
+  }
+  .dreams__img {
+    margin-bottom: 0;
+  }
+  .dreams__title {
+    font-size: 3.4rem;
+  }
+  .dreams__text {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .dreams {
+    padding: 10em 2em;
+  }
+  .dreams__title {
+    font-size: 4rem;
+  }
+  .dreams__text {
+    font-size: 2.2rem;
+  }
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 10em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFF;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.hero__title, .hero__text {
+  margin: 2rem 0;
+}
+.hero__title {
+  font-family: var(--dancing-script-bold);
+  font-size: 4.2rem;
+}
+.hero__text {
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+.hero hr {
+  margin: 0 auto;
+  width: 90%;
+}
+
+@media (min-width: 576px) {
+  .hero {
+    padding: 15em 2em;
+  }
+  .hero__title {
+    font-size: 4.8rem;
+  }
+  .hero__text {
+    font-size: 2.6rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero {
+    padding: 20em 2em;
+  }
+  .hero__title {
+    font-size: 6.2rem;
+  }
+  .hero__text {
+    font-size: 3rem;
+  }
+  .hero hr {
+    width: 70%;
+  }
+}
+.islands__cards {
+  display: flex;
+  flex-direction: column;
+}
+.islands__card {
+  margin: 1em 0;
+  height: 450px;
+  position: relative;
+  color: #FFF;
+  text-align: center;
+  perspective: 1000px;
+}
+.islands__card-img {
+  padding: 2em;
+  height: 100%;
+  border-radius: 8px;
+  background-size: cover;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  background-position: center;
+  background-size: cover;
+}
+.islands__card-img--first {
+  background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.5), rgba(8, 24, 255, 0.5)), url("../assets/images/bali-island.jpg");
+}
+.islands__card-img--second {
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/japanese-island.jpg");
+}
+.islands__card-img--third {
+  background-image: linear-gradient(45deg, rgba(190, 10, 214, 0.5), rgba(68, 0, 255, 0.5)), url("../assets/images/hawaii-palms-pond.jpg");
+}
+.islands__card-img-title {
+  font-family: var(--dancing-script-bold);
+  font-size: 3.6rem;
+}
+.islands__card-img-info {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.8rem;
+}
+.islands__card-img-info i {
+  margin-right: 0.3em;
+}
+.islands__card-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: radial-gradient(circle at top right, rgb(0, 78, 255) 0%, rgb(0, 212, 255) 100%);
+  border-radius: 8px;
+  transform: rotateY(180deg);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  opacity: 0;
+}
+.islands__card-info-title {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 2.75rem;
+  transform: translateX(-50%);
+  font-family: var(--dancing-script-bold);
+  font-size: 2.6rem;
+}
+.islands__card-info-list {
+  list-style: none;
+  margin: 0 auto;
+  width: 70%;
+}
+.islands__card-info-list-item {
+  padding: 1em 0;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #fefefe;
+}
+.islands__card-info-list-item:last-child {
+  border-bottom: none;
+}
+.islands__card-info-btn {
+  width: 80%;
+  bottom: -2em;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #00ffaa;
+  cursor: pointer;
+}
+.islands__card-info-btn::before {
+  background-color: #0fe29c;
+}
+.islands__card:hover .islands__card-img {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+.islands__card:hover .islands__card-info {
+  transform: rotateY(0);
+  opacity: 1;
+}
+
+@media (min-width: 576px) {
+  .islands__card-img-title {
+    font-size: 3.6rem;
+  }
+}
+@media (min-width: 768px) {
+  .islands__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .islands__card {
+    width: 40%;
+    margin: 1em;
+  }
+}
+@media (min-width: 992px) {
+  .islands__card {
+    width: 30%;
+  }
+}
+.offers {
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
+}
+.offers .section__heading {
+  color: #FFF;
+}
+.offers__option {
+  margin: 2em 0;
+  background-color: #FFF;
+  border-radius: 0.5em;
+}
+.offers__option-img {
+  overflow: hidden;
+}
+.offers__option-img:hover .offers__img {
+  transform: scale(1.1);
+}
+.offers__option-info {
+  padding: 1.4em;
+}
+.offers__option-heading {
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+}
+.offers__option-text {
+  color: #4b4b4b;
+}
+.offers__option-btn {
+  width: 100%;
+  margin-top: 1em;
+  padding: 0.8em;
+  color: #FFF;
+  background-color: #1755e7;
+  border: none;
+  border-radius: 8px;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+.offers__option-btn::before {
+  background-color: #164b9b;
+}
+.offers__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5em 0.5em 0 0;
+  transition: transform 300ms linear;
+}
+
+@media (min-width: 768px) {
+  .offers__option {
+    display: flex;
+  }
+  .offers__option-img {
+    width: 50%;
+  }
+  .offers__option-img--right {
+    order: 1;
+  }
+  .offers__option-img--right .offers__img {
+    border-radius: 0 0.5em 0.5em 0;
+  }
+  .offers__option-heading {
+    font-size: 3.6rem;
+  }
+  .offers__option-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .offers__img {
+    border-radius: 0.5em 0 0 0.5em;
+  }
+}
+@media (min-width: 992px) {
+  .offers__option {
+    height: 320px;
+  }
+  .offers__option-text {
+    font-size: 1.8rem;
+  }
 }
 .team__cards {
   display: flex;
@@ -446,494 +949,4 @@ body {
 body {
   font-family: var(--nunito-regular);
   font-size: 1.6rem;
-}
-
-.burger-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 1.5em;
-  border: 2px solid transparent;
-  background-color: transparent;
-  z-index: 3;
-  cursor: pointer;
-}
-.burger-btn__box {
-  position: relative;
-  width: 40px;
-  height: 30px;
-}
-.burger-btn__bars, .burger-btn__bars::before, .burger-btn__bars::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  height: 3px;
-  background-color: #fefefe;
-  transition: width 300ms;
-}
-.burger-btn__bars {
-  top: 0;
-  width: 100%;
-}
-.burger-btn__bars::before {
-  top: 13px;
-  width: 60%;
-  transition-delay: 100ms;
-}
-.burger-btn__bars::after {
-  top: 27px;
-  width: 30%;
-  transition-delay: 200ms;
-}
-.burger-btn:focus {
-  border: 2px solid #fefefe;
-  border-radius: 8px;
-}
-.burger-btn:hover .burger-btn__bars::before,
-.burger-btn:hover .burger-btn__bars::after {
-  width: 100%;
-}
-
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
-  transform: translateX(100%);
-  transition: 500ms cubic-bezier(0.65, 0.05, 0.36, 1);
-  z-index: 2;
-}
-.nav--active {
-  transform: translateX(0);
-}
-.nav__item {
-  position: relative;
-  display: block;
-  margin: 0.5em 0;
-  padding: 0.5em 1em;
-  font-size: 2.8rem;
-  color: #FFF;
-  text-decoration: none;
-  line-height: 1;
-}
-.nav__item-animation {
-  animation: navItemAnimation 1s cubic-bezier(0.65, 0.05, 0.36, 1);
-  animation-fill-mode: backwards;
-}
-.nav__item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background-color: #FFF;
-  transform: scale(0);
-  transition: transform 250ms linear;
-}
-.nav__item:hover::before {
-  transform: scale(1);
-}
-
-.header {
-  height: 85vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  color: #fefefe;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-.header__title {
-  margin-bottom: 0.2em;
-  font-family: var(--dancing-script-bold);
-  font-size: 5rem;
-  font-weight: 300;
-}
-.header__text {
-  margin-bottom: 1.5em;
-}
-.header__btn {
-  padding: 0.8em 1.6em;
-  background-color: #FFF;
-  color: #333;
-  border: none;
-  border-radius: 4px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-@keyframes navItemAnimation {
-  from {
-    opacity: 0;
-    transform: translateX(30vw);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-.dreams__box {
-  display: flex;
-  flex-direction: column;
-}
-.dreams__img {
-  width: 100%;
-  margin-bottom: 2rem;
-  border-radius: 6px;
-}
-.dreams__title {
-  margin-bottom: 1rem;
-  font-size: 2.8rem;
-}
-.dreams__text {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-  color: #4b4b4b;
-}
-
-/* Hero Section */
-.hero {
-  position: relative;
-  overflow: hidden;
-  padding: 10em 2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #FFF;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-.hero__title, .hero__text {
-  margin: 2rem 0;
-}
-.hero__title {
-  font-family: var(--dancing-script-bold);
-  font-size: 4.2rem;
-}
-.hero__text {
-  font-size: 2.2rem;
-  font-weight: 400;
-}
-.hero hr {
-  margin: 0 auto;
-  width: 90%;
-}
-
-/* Islands Section */
-.islands__cards {
-  display: flex;
-  flex-direction: column;
-}
-.islands__card {
-  margin: 1em 0;
-  height: 450px;
-  position: relative;
-  color: #FFF;
-  text-align: center;
-  perspective: 1000px;
-}
-.islands__card-img {
-  padding: 2em;
-  height: 100%;
-  border-radius: 8px;
-  background-size: cover;
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-  background-position: center;
-  background-size: cover;
-}
-.islands__card-img--first {
-  background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.5), rgba(8, 24, 255, 0.5)), url("../assets/images/bali-island.jpg");
-}
-.islands__card-img--second {
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/japanese-island.jpg");
-}
-.islands__card-img--third {
-  background-image: linear-gradient(45deg, rgba(190, 10, 214, 0.5), rgba(68, 0, 255, 0.5)), url("../assets/images/hawaii-palms-pond.jpg");
-}
-.islands__card-img-title {
-  font-family: var(--dancing-script-bold);
-  font-size: 3.6rem;
-}
-.islands__card-img-info {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  font-size: 1.8rem;
-}
-.islands__card-img-info i {
-  margin-right: 0.3em;
-}
-.islands__card-info {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-image: radial-gradient(circle at top right, rgb(0, 78, 255) 0%, rgb(0, 212, 255) 100%);
-  border-radius: 8px;
-  transform: rotateY(180deg);
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-  opacity: 0;
-}
-.islands__card-info-title {
-  width: 100%;
-  position: absolute;
-  left: 50%;
-  top: 2.75rem;
-  transform: translateX(-50%);
-  font-family: var(--dancing-script-bold);
-  font-size: 2.6rem;
-}
-.islands__card-info-list {
-  list-style: none;
-  margin: 0 auto;
-  width: 70%;
-}
-.islands__card-info-list-item {
-  padding: 1em 0;
-  font-size: 1.6rem;
-  border-bottom: 2px solid #fefefe;
-}
-.islands__card-info-list-item:last-child {
-  border-bottom: none;
-}
-.islands__card-info-btn {
-  width: 80%;
-  bottom: -2em;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 1em;
-  border: none;
-  border-radius: 4px;
-  background-color: #00ffaa;
-  cursor: pointer;
-}
-.islands__card-info-btn::before {
-  background-color: #0fe29c;
-}
-.islands__card:hover .islands__card-img {
-  transform: rotateY(-180deg);
-  opacity: 0;
-}
-.islands__card:hover .islands__card-info {
-  transform: rotateY(0);
-  opacity: 1;
-}
-
-/* Offers Section */
-.offers {
-  position: relative;
-  overflow-x: hidden;
-  background: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
-}
-.offers .section__heading {
-  color: #FFF;
-}
-.offers__option {
-  margin: 2em 0;
-  background-color: #FFF;
-  border-radius: 0.5em;
-}
-.offers__option-img {
-  overflow: hidden;
-}
-.offers__option-img:hover .offers__img {
-  transform: scale(1.1);
-}
-.offers__option-info {
-  padding: 1.4em;
-}
-.offers__option-heading {
-  font-size: 2.4rem;
-  font-weight: 400;
-  margin-bottom: 0.5em;
-}
-.offers__option-text {
-  color: #4b4b4b;
-}
-.offers__option-btn {
-  width: 100%;
-  margin-top: 1em;
-  padding: 0.8em;
-  color: #FFF;
-  background-color: #1755e7;
-  border: none;
-  border-radius: 8px;
-  font-size: 2.2rem;
-  cursor: pointer;
-}
-.offers__option-btn::before {
-  background-color: #164b9b;
-}
-.offers__img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 0.5em 0.5em 0 0;
-  transition: transform 300ms linear;
-}
-
-/*** MEDIA QUERIES ***/
-@media (min-width: 576px) {
-  .hero {
-    padding: 15em 2em;
-  }
-  .islands__card-img-title {
-    font-size: 3.6rem;
-  }
-}
-@media (min-width: 768px) {
-  .burger-btn {
-    top: 40px;
-    right: 40px;
-  }
-  .nav__item {
-    font-size: 3.6rem;
-    font-weight: 300;
-  }
-  .header__title {
-    font-size: 5rem;
-  }
-  .header__text {
-    font-size: 2rem;
-  }
-  .header__btn {
-    font-size: 1.8rem;
-  }
-  .dreams__box {
-    flex-direction: row;
-    gap: 2rem;
-    margin: 2em 0;
-  }
-  .dreams__box-img {
-    width: 45%;
-  }
-  .dreams__box-img--two {
-    order: 1;
-  }
-  .dreams__box-text {
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .dreams__box-text--two {
-    text-align: right;
-  }
-  .dreams__img {
-    margin-bottom: 0;
-  }
-  .dreams__title {
-    font-size: 3.4rem;
-  }
-  .dreams__text {
-    font-size: 2rem;
-  }
-  .hero__title {
-    font-size: 4.8rem;
-  }
-  .hero__text {
-    font-size: 2.6rem;
-  }
-  .islands__cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .islands__card {
-    width: 40%;
-    margin: 1em;
-  }
-  .offers__option {
-    display: flex;
-  }
-  .offers__option-img {
-    width: 50%;
-  }
-  .offers__option-img--right {
-    order: 1;
-  }
-  .offers__option-img--right .offers__img {
-    border-radius: 0 0.5em 0.5em 0;
-  }
-  .offers__option-heading {
-    font-size: 3.6rem;
-  }
-  .offers__option-info {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .offers__img {
-    border-radius: 0.5em 0 0 0.5em;
-  }
-}
-@media (min-width: 992px) {
-  .nav__item {
-    font-size: 4.2rem;
-  }
-  .header {
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero-hq.jpg");
-  }
-  .header__title {
-    font-size: 6rem;
-  }
-  .header__text {
-    font-size: 2.4rem;
-  }
-  .header .white-block {
-    width: 50%;
-  }
-  .dreams {
-    padding: 10em 2em;
-  }
-  .dreams__title {
-    font-size: 4rem;
-  }
-  .dreams__text {
-    font-size: 2.2rem;
-  }
-  .hero {
-    padding: 20em 2em;
-  }
-  .hero__title {
-    font-size: 6.2rem;
-  }
-  .hero__text {
-    font-size: 3rem;
-  }
-  .hero hr {
-    width: 70%;
-  }
-  .islands__card {
-    width: 30%;
-  }
-  .offers__option {
-    height: 320px;
-  }
-  .offers__option-text {
-    font-size: 1.8rem;
-  }
 }/*# sourceMappingURL=style.css.map */

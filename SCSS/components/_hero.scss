@@ -1,0 +1,63 @@
+@use "../colors";
+@use "../mixins";
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 10em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: colors.$pure-white;
+  @include mixins.bgImg("../assets/images/seychelles-hero.jpg");
+
+  &__title, &__text {
+    margin: 2rem 0;
+  }
+
+  &__title {
+    font-family: var(--dancing-script-bold);
+    font-size: 4.2rem;
+  }
+
+  &__text {
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+
+  hr {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+@media (min-width: 576px) {
+  .hero {
+    padding: 15em 2em;
+
+    &__title {
+      font-size: 4.8rem;
+    }
+    &__text {
+      font-size: 2.6rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .hero {
+    padding: 20em 2em;
+
+    &__title {
+      font-size: 6.2rem;
+    }
+    &__text {
+      font-size: 3rem;
+    }
+    hr {
+      width: 70%;
+    }
+  }
+}
