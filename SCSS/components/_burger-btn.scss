@@ -5,6 +5,12 @@
   @include mixins.burgerBtn;
   cursor: pointer;
 
+  .black-bars,
+  .black-bars::before,
+  .black-bars::after {
+    background-color: colors.$dark;
+  }
+
   &__box {
     position: relative;
     width: 40px;
