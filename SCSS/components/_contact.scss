@@ -13,12 +13,21 @@
     background-color: colors.$dark;
   }
   
-  &__form, &__form-top, &__form-bottom {
+  &__form, &__form-top, &__form-box, &__form-bottom {
     display: flex;
     flex-direction: column;
   }
 
   &__form {
+    &-box {
+      margin-bottom: 2em;
+    }
+
+    &-error {
+      display: none;
+      margin-top: .15em;
+    }
+
     &-label {
       margin-bottom: .35em;
       font-family: var(--nunito-semibold);
@@ -34,6 +43,12 @@
       resize: vertical;
       min-height: 150px;
       padding: .8em;
+    }
+
+    &-error {
+      color: colors.$danger;
+      font-family: var(--nunito-semibold);
+      font-size: 1.8rem;
     }
 
     &-bottom {

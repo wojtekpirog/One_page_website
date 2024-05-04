@@ -3,6 +3,12 @@ let burgerBtn;
 let allNavItems;
 let burgerBtnBars;
 let allSections;
+let fullname;
+let email;
+let textarea;
+let error;
+let clearBtn;
+let submitBtn;
 let footerYear;
 
 const main = () => {
@@ -17,12 +23,64 @@ const prepareElements = () => {
   allNavItems = document.querySelectorAll(".nav__item");
   burgerBtnBars = document.querySelector(".burger-btn__bars");
   allSections = document.querySelectorAll(".section");
+  fullname = document.querySelector("#fullname");
+  email = document.querySelector("#email");
+  textarea = document.querySelector("#message");
+  error = document.querySelector(".contact__form-error");
+  clearBtn = document.querySelector(".contact__form-btn--reset");
+  submitBtn = document.querySelector(".contact__form-btn--submit");
   footerYear = document.querySelector(".footer__year");
 }
 
 const addEventListeners = () => {
   burgerBtn.addEventListener("click", toggleNavbar);
+  clearBtn.addEventListener("click", handleFormClear);
+  submitBtn.addEventListener("click", handleFormSubmit);
   window.addEventListener("scroll", handleObserver);
+}
+
+const handleFormClear = (event) => {
+  event.preventDefault();
+  [fullname, email, textarea].forEach((input) => input.value = "");
+}
+
+const handleFormSubmit = (event) => {
+  event.preventDefault();
+
+  checkForm([fullname, email, textarea]);
+  checkLength([fullname, email, textarea]);
+}
+
+const checkForm = (formInputs) => {
+  formInputs.forEach((input) => {
+    if (input.value === "") {
+      showError(input, "Pole jest puste!");
+    } else {
+      clearError(input);
+    }
+  });
+}
+
+const checkLength = (inputArray) => {
+  inputArray.forEach((input) => {
+    if (input.value.length < input.minLength || input.value.length > input.maxLength) {
+      showError(input, `Pole "${input.previousElementSibling.textContent.slice(0, -2)}" musi zawierać od ${input.minLength} do ${input.maxLength} znaków.`);
+    } else {
+      clearError(input);
+    }
+  });
+}
+
+const showError = (input, message) => {
+  input.style.borderColor = "tomato";
+  input.nextElementSibling.style.display = "block";
+  input.nextElementSibling.textContent = message;
+}
+
+const clearError = (input) => {
+  input.style.borderColor = "#333";
+  input.nextElementSibling.style.display = "none";
+  input.nextElementSibling.textContent = "";
 }
 
 const toggleNavbar = () => {

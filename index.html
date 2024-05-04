@@ -385,18 +385,32 @@
           <h2 class="section__heading">Kontakt</h2>
           <!-- Section Header -->
           <!-- Contact Form -->
-          <form class="contact__form" method="post" enctype="application/x-www-form-urlencoded">
+          <form class="contact__form" method="post">
             <!-- Contact__form-top -->
             <div class="contact__form-top">
-              <label for="fullname" class="contact__form-label">Imię i nazwisko: </label>
-              <input type="text" id="fullname" class="contact__form-input" maxlength="50" required />
-              <label for="email" class="contact__form-label">Adres e-mail: </label>
-              <input type="email" id="email" class="contact__form-input" maxlength="50" required />
+              <!-- Contact__form-box -->
+              <div class="contact__form-box">
+                <label for="fullname" class="contact__form-label">Imię i nazwisko: </label>
+                <input type="text" id="fullname" class="contact__form-input" minlength="3" maxlength="50" required />
+                <p class="contact__form-error"></p>
+              </div>
+              <!-- Contact__form-box -->
+              <!-- Contact__form-box -->
+              <div class="contact__form-box">
+                <label for="email" class="contact__form-label">Adres e-mail: </label>
+                <input type="email" id="email" class="contact__form-input" minlength="8" maxlength="50" required />
+                <p class="contact__form-error"></p>
+              </div>
+              <!-- Contact__form-box -->
             </div>
             <!-- Contact__form-top -->
-            <!-- Message -->
-            <label for="message" class="contact__form-label">Wiadomość: </label>
-            <textarea id="message" class="contact__form-textarea" maxlength="500" required></textarea>
+            <!-- Contact__form-box -->
+            <div class="contact__form-box">
+              <label for="message" class="contact__form-label">Wiadomość: </label>
+              <textarea id="message" class="contact__form-textarea" minlength="0" maxlength="500" required></textarea>
+              <p class="contact__form-error"></p>
+            </div>
+            <!-- Contact__form-box -->
             <!-- Message -->
             <!-- Contact__form-bottom -->
             <div class="contact__form-bottom">
