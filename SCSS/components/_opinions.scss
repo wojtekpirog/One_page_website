@@ -4,7 +4,7 @@
 .opinions {
   @include mixins.sectionBackground(colors.$blue-gradient);
 
-  .white-block-left {
+  .white-block {
     background-color: colors.$less-light;
   }
 
