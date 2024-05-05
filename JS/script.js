@@ -49,6 +49,7 @@ const handleFormSubmit = (event) => {
 
   checkForm([fullname, email, textarea]);
   checkLength([fullname, email, textarea]);
+  checkEmailAddress(email);
 }
 
 const checkForm = (formInputs) => {
@@ -69,6 +70,11 @@ const checkLength = (inputArray) => {
       clearError(input);
     }
   });
+}
+
+const checkEmailAddress = (emailInput) => {
+  const regExp = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+  regExp.test(emailInput.value) ? clearError(emailInput) : showError(emailInput, "Adres e-mail jest nieprawidłowy!");
 }
 
 const showError = (input, message) => {
