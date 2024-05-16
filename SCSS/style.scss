@@ -13,6 +13,9 @@
 @use "./components/opinions";
 @use "./components/contact";
 @use "./components/footer";
+@use "./breakpoints/small";
+@use "./breakpoints/medium";
+@use "./breakpoints/large";
 
 :root {
   --dancing-script-regular: "DancingScript-Regular", sans-serif;

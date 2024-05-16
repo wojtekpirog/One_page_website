@@ -1,0 +1,91 @@
+@use "../colors";
+
+@media screen and (min-width: 992px) {
+  // Components
+  .section-padding {
+    padding: 10em 2em;
+  }
+  .section__heading {
+    font-size: 4.2rem;
+  }
+  // Navbar
+  .nav {
+    &__item {
+      font-size: 4.8rem;
+    }
+  }
+  // Header
+  .header {
+    background-image: colors.$blue-gradient, url("../assets/images/seychelles-hero-hq.jpg");
+
+    &__title {
+      font-size: 8rem;
+    }
+    &__text {
+      font-size: 2.4rem;
+    }
+    .white-block {
+      width: 50%;
+    }
+  }
+  // Dreams
+  .dreams {
+    padding: 10em 2em;
+
+    &__title {
+      font-size: 4rem;
+    }
+    &__text {
+      font-size: 2.2rem;
+    }
+  }
+  // Hero
+  .hero {
+    padding: 20em 2em;
+
+    &__title {
+      font-size: 6.2rem;
+    }
+    &__text {
+      font-size: 3rem;
+    }
+    hr {
+      width: 70%;
+    }
+  }
+  // Islands
+  .islands {
+    &__card {
+      width: 30%;
+    }
+  }
+  // Offers
+  .offers {
+    &__option {
+      height: 400px;
+
+      &-text {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  // Team
+  .team {
+    &__card {
+      width: 30%;
+    }
+  }
+  // Stats
+  .statistics {
+    &__box {
+      width: 16.6%;
+      padding: 0 2em;
+    }
+  }
+  // Footer
+  .footer {
+    &__box-title {
+      font-size: 3.6rem;
+    }
+  }
+}

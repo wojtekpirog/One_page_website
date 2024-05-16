@@ -4,10 +4,10 @@
   &__cards {
     display: flex;
     flex-direction: column;
+    gap: 2em;
   }
 
   &__card {
-    margin: 1em 0;
     height: 450px;
     position: relative;
     color: colors.$pure-white;
@@ -119,36 +119,6 @@
         transform: rotateY(0);
         opacity: 1;
       }
-    }
-  }
-}
-
-@media (min-width: 576px) {
-  .islands {
-    &__card-img-title {
-      font-size: 3.6rem;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .islands {
-    &__cards {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    &__card {
-      width: 40%;
-      margin: 1em;
-    }
-  }
-}
-
-@media (min-width: 992px) {
-  .islands {
-    &__card {
-      width: 30%;
     }
   }
 }

@@ -111,23 +111,6 @@ html {
   letter-spacing: 1px;
 }
 
-/*** MEDIA QUERIES ***/
-@media (min-width: 768px) {
-  .section-padding {
-    padding: 8em 2em;
-  }
-  .section__heading {
-    font-size: 3.6rem;
-  }
-}
-@media (min-width: 992px) {
-  .section-padding {
-    padding: 10rem 2rem;
-  }
-  .section__heading {
-    font-size: 4.2rem;
-  }
-}
 .burger-btn {
   position: fixed;
   top: 20px;
@@ -179,12 +162,6 @@ html {
   width: 100%;
 }
 
-@media (min-width: 768px) {
-  .burger-btn {
-    top: 40px;
-    right: 40px;
-  }
-}
 .nav {
   position: fixed;
   top: 0;
@@ -287,31 +264,6 @@ html {
   font-family: var(--nunito-semibold);
 }
 
-@media (min-width: 768px) {
-  .header__title {
-    font-size: 6rem;
-  }
-  .header__text {
-    font-size: 2rem;
-  }
-  .header__btn {
-    font-size: 1.8rem;
-  }
-}
-@media (min-width: 992px) {
-  .header {
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero-hq.jpg");
-  }
-  .header__title {
-    font-size: 8rem;
-  }
-  .header__text {
-    font-size: 2.4rem;
-  }
-  .header .white-block {
-    width: 50%;
-  }
-}
 .dreams__box {
   display: flex;
   flex-direction: column;
@@ -331,48 +283,6 @@ html {
   color: #4b4b4b;
 }
 
-@media (min-width: 768px) {
-  .dreams__box {
-    flex-direction: row;
-    gap: 2rem;
-    margin: 2em 0;
-  }
-  .dreams__box-img {
-    width: 45%;
-  }
-  .dreams__box-img--two {
-    order: 1;
-  }
-  .dreams__box-text {
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .dreams__box-text--two {
-    text-align: right;
-  }
-  .dreams__img {
-    margin-bottom: 0;
-  }
-  .dreams__title {
-    font-size: 3.4rem;
-  }
-  .dreams__text {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 992px) {
-  .dreams {
-    padding: 10em 2em;
-  }
-  .dreams__title {
-    font-size: 4rem;
-  }
-  .dreams__text {
-    font-size: 2.2rem;
-  }
-}
 .hero {
   position: relative;
   overflow: hidden;
@@ -404,37 +314,12 @@ html {
   width: 90%;
 }
 
-@media (min-width: 576px) {
-  .hero {
-    padding: 15em 2em;
-  }
-  .hero__title {
-    font-size: 4.8rem;
-  }
-  .hero__text {
-    font-size: 2.6rem;
-  }
-}
-@media (min-width: 992px) {
-  .hero {
-    padding: 20em 2em;
-  }
-  .hero__title {
-    font-size: 6.2rem;
-  }
-  .hero__text {
-    font-size: 3rem;
-  }
-  .hero hr {
-    width: 70%;
-  }
-}
 .islands__cards {
   display: flex;
   flex-direction: column;
+  gap: 2em;
 }
 .islands__card {
-  margin: 1em 0;
   height: 450px;
   position: relative;
   color: #FFF;
@@ -534,27 +419,6 @@ html {
   opacity: 1;
 }
 
-@media (min-width: 576px) {
-  .islands__card-img-title {
-    font-size: 3.6rem;
-  }
-}
-@media (min-width: 768px) {
-  .islands__cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .islands__card {
-    width: 40%;
-    margin: 1em;
-  }
-}
-@media (min-width: 992px) {
-  .islands__card {
-    width: 30%;
-  }
-}
 .offers {
   position: relative;
   overflow-x: hidden;
@@ -609,40 +473,6 @@ html {
   transition: transform 300ms linear;
 }
 
-@media (min-width: 768px) {
-  .offers__option {
-    display: flex;
-  }
-  .offers__option-img {
-    width: 50%;
-  }
-  .offers__option-img--right {
-    order: 1;
-  }
-  .offers__option-img--right .offers__img {
-    border-radius: 0 0.5em 0.5em 0;
-  }
-  .offers__option-heading {
-    font-size: 3.6rem;
-  }
-  .offers__option-info {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .offers__img {
-    border-radius: 0.5em 0 0 0.5em;
-  }
-}
-@media (min-width: 992px) {
-  .offers__option {
-    height: 320px;
-  }
-  .offers__option-text {
-    font-size: 1.8rem;
-  }
-}
 .team__cards {
   display: flex;
   flex-direction: column;
@@ -722,21 +552,6 @@ html {
     height: 600px;
   }
 }
-@media (min-width: 768px) {
-  .team__cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .team__card {
-    width: 40%;
-  }
-}
-@media (min-width: 992px) {
-  .team__card {
-    width: 30%;
-  }
-}
 .statistics {
   position: relative;
   overflow-x: hidden;
@@ -772,40 +587,6 @@ html {
   text-transform: uppercase;
 }
 
-@media (min-width: 576px) {
-  .statistics__boxes {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .statistics__box {
-    width: 50%;
-    padding: 2em 1em;
-  }
-  .statistics__box:nth-child(2) {
-    padding-top: 0;
-  }
-  .statistics__box:nth-child(5) {
-    padding-bottom: 0;
-  }
-}
-@media (min-width: 768px) {
-  .statistics__box {
-    width: 33.3%;
-  }
-  .statistics__box:nth-child(3) {
-    padding-top: 0;
-  }
-  .statistics__box:nth-child(4) {
-    padding-bottom: 0;
-  }
-}
-@media (min-width: 992px) {
-  .statistics__box {
-    width: 16.6%;
-    padding: 0 2em;
-  }
-}
 .opinions {
   position: relative;
   overflow-x: hidden;
@@ -989,16 +770,6 @@ html {
   }
 }
 @media (min-width: 768px) {
-  .footer__boxes {
-    display: flex;
-  }
-  .footer__box {
-    margin: 0 2em;
-    width: 25%;
-  }
-  .footer__box:first-child {
-    width: 50%;
-  }
   .footer__box-title {
     font-size: 2.6rem;
   }
@@ -1020,9 +791,206 @@ html {
     font-size: 1.8rem;
   }
 }
-@media (min-width: 992px) {
+@media screen and (min-width: 576px) {
+  .hero {
+    padding: 15em 2em;
+  }
+  .hero__title {
+    font-size: 4.8rem;
+  }
+  .hero__text {
+    font-size: 2.6rem;
+  }
+  .islands__card-img-title {
+    font-size: 3.6rem;
+  }
+  .statistics__boxes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .statistics__box {
+    width: 50%;
+    padding: 2em 1em;
+  }
+  .statistics__box:nth-child(2) {
+    padding-top: 0;
+  }
+  .statistics__box:nth-child(5) {
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section-padding {
+    padding: 8em 2em;
+  }
+  .section__heading {
+    font-size: 3.6rem;
+  }
+  .burger-btn {
+    top: 40px;
+    right: 40px;
+  }
+  .header__title {
+    font-size: 6rem;
+  }
+  .header__text {
+    font-size: 2rem;
+  }
+  .header__btn {
+    font-size: 1.8rem;
+  }
+  .dreams__box {
+    flex-direction: row;
+    gap: 2em;
+    margin: 2em 0;
+  }
+  .dreams__box-img {
+    width: 45%;
+  }
+  .dreams__box-img--two {
+    order: 1;
+  }
+  .dreams__box-text {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dreams__box-text--two {
+    text-align: right;
+  }
+  .dreams__img {
+    margin-bottom: 0;
+  }
+  .dreams__title {
+    font-size: 3.4rem;
+  }
+  .dreams__text {
+    font-size: 2rem;
+  }
+  .islands__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .islands__card {
+    width: 40%;
+  }
+  .offers__option {
+    display: flex;
+    overflow: hidden;
+  }
+  .offers__option-img {
+    width: 50%;
+  }
+  .offers__option-img--right {
+    order: 1;
+  }
+  .offers__option-img--right .offers__img {
+    border-radius: 0 0.5em 0.5em 0;
+  }
+  .offers__option-heading {
+    font-size: 3.6rem;
+  }
+  .offers__option-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .offers__img {
+    border-radius: 0.5em 0 0 0.5em;
+  }
+  .team__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .team__card {
+    width: 40%;
+  }
+  .statistics__box {
+    width: 33.3%;
+  }
+  .statistics__box:nth-child(3) {
+    padding-top: 0;
+  }
+  .statistics__box:nth-child(4) {
+    padding-bottom: 0;
+  }
+  .footer__boxes {
+    display: flex;
+  }
+  .footer__box {
+    width: 25%;
+    margin: 2rem;
+  }
+  .footer__box:first-child {
+    width: 50%;
+  }
   .footer__box-title {
-    font-size: 3.2rem;
+    font-size: 2.6rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .section-padding {
+    padding: 10em 2em;
+  }
+  .section__heading {
+    font-size: 4.2rem;
+  }
+  .header {
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero-hq.jpg");
+  }
+  .header__title {
+    font-size: 8rem;
+  }
+  .header__text {
+    font-size: 2.4rem;
+  }
+  .header .white-block {
+    width: 50%;
+  }
+  .dreams {
+    padding: 10em 2em;
+  }
+  .dreams__title {
+    font-size: 4rem;
+  }
+  .dreams__text {
+    font-size: 2.2rem;
+  }
+  .hero {
+    padding: 20em 2em;
+  }
+  .hero__title {
+    font-size: 6.2rem;
+  }
+  .hero__text {
+    font-size: 3rem;
+  }
+  .hero hr {
+    width: 70%;
+  }
+  .islands__card {
+    width: 30%;
+  }
+  .offers__option {
+    height: 400px;
+  }
+  .offers__option-text {
+    font-size: 1.8rem;
+  }
+  .team__card {
+    width: 30%;
+  }
+  .statistics__box {
+    width: 16.6%;
+    padding: 0 2em;
+  }
+  .footer__box-title {
+    font-size: 3.6rem;
   }
 }
 :root {

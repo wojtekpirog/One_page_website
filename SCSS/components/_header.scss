@@ -35,33 +35,3 @@
     font-family: var(--nunito-semibold);
   }
 }
-
-@media (min-width: 768px) {
-  .header {
-    &__title {
-      font-size: 6rem;
-    }
-    &__text {
-      font-size: 2rem;
-    }    
-    &__btn {
-      font-size: 1.8rem;
-    }
-  }
-}
-
-@media (min-width: 992px) {
-  .header {
-    background-image: colors.$blue-gradient, url("../assets/images/seychelles-hero-hq.jpg");
-
-    &__title {
-      font-size: 8rem;
-    }
-    &__text {
-      font-size: 2.4rem;
-    }
-    .white-block {
-      width: 50%;
-    }
-  }
-}

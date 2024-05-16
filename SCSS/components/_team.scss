@@ -91,25 +91,3 @@
     }
   }
 }
-
-@media (min-width: 768px) {
-  .team {
-    &__cards {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    &__card {
-      width: 40%;
-    }
-  }
-}
-
-@media (min-width: 992px) {
-  .team {
-    &__card {
-      width: 30%;
-    }
-  }
-}

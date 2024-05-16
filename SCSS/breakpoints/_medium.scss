@@ -1,0 +1,173 @@
+@media screen and (min-width: 768px) {
+  // Components
+  .section-padding {
+    padding: 8em 2em;
+  }
+  .section__heading {
+    font-size: 3.6rem;
+  }
+  // Burger btn
+  .burger-btn {
+    top: 40px;
+    right: 40px;
+  }
+  // Navbar
+  .nav {
+    &__item {
+      font-size: 3.6rem;
+      font-weight: 300;
+    }
+  }
+  // Header
+  .header {
+    &__title {
+      font-size: 6rem;
+    }
+    &__text {
+      font-size: 2rem;
+    }    
+    &__btn {
+      font-size: 1.8rem;
+    }
+  }
+  // Dreams
+  .dreams {
+    &__box {
+      flex-direction: row;
+      gap: 2em;
+      margin: 2em 0;
+  
+      &-img{
+        width: 45%;
+
+        &--two {
+          order: 1;
+        }
+      }
+
+      &-text {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &--two {
+          text-align: right;
+        }
+      }
+    }
+
+    &__img {
+      margin-bottom: 0;
+    }
+    &__title {
+      font-size: 3.4rem;
+    }  
+    &__text {
+      font-size: 2rem;
+    }
+  }
+  // Islands
+  .islands {
+    &__cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__card {
+      width: 40%;
+    }
+  }
+  // Offers
+  .offers {
+    &__option {
+      display: flex;
+      overflow: hidden;
+
+      &-img {
+        width: 50%;
+
+        &--right {
+          order: 1;
+
+          .offers__img {
+            border-radius: 0 0.5em 0.5em 0;
+          }
+        }
+      }
+      &-heading {
+        font-size: 3.6rem;
+      }     
+      &-info {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+    &__img {
+      border-radius: .5em 0 0 .5em;
+    }
+  }
+  // Team
+  .team {
+    &__cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__card {
+      width: 40%;
+    }
+  }
+  // Stats
+  .statistics {
+    &__box {
+      width: 33.3%;
+
+      &:nth-child(3) {
+        padding-top: 0;
+      }
+      &:nth-child(4) {
+        padding-bottom: 0;
+      }
+    }
+  }
+  // Footer
+  .footer {
+    &__boxes {
+      display: flex;
+    }
+    &__box {
+      width: 25%;
+      margin: 2rem;
+
+      &:first-child {
+        width: 50%;
+      }
+      &-title {
+        font-size: 2.6rem;
+      }
+      &-list-item {
+        margin-bottom: .8em;
+
+        a {
+          color: colors.$pure-white;
+          text-decoration: none;
+          transition: color 300ms linear;
+
+          &:hover {
+            color: colors.$footer-link-hover;
+          }
+        }
+      }
+    }
+
+    &__box-desktop {
+      display: block;
+    }
+    &__bottom-text {
+      font-size: 1.8rem;
+    }
+  }
+}

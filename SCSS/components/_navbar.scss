@@ -62,20 +62,3 @@
     transform: translateX(0);
   }
 }
-
-@media (min-width: 768px) {
-  .nav {
-    &__item {
-      font-size: 3.6rem;
-      font-weight: 300;
-    }
-  }
-}
-
-@media (min-width: 992px) {
-  .nav {
-    &__item {
-      font-size: 4.8rem;
-    }
-  }
-}

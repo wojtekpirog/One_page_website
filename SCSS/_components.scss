@@ -39,7 +39,7 @@
     background-color: colors.$less-light;
     transform: skew(-20deg);
     transition: left 300ms ease-in-out;
-    z-index: -1; // `::before` musi być pod warstwą tekstu, aby tego tekstu na przycisku nie przykryć
+    z-index: -1;
   }
 
   &:hover {
@@ -62,26 +62,4 @@
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-/*** MEDIA QUERIES ***/
-
-@media (min-width: 768px) {
-  .section-padding {
-    padding: 8em 2em;
-  }
-
-  .section__heading {
-    font-size: 3.6rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .section-padding {
-    padding: 10rem 2rem;
-  }
-
-  .section__heading {
-    font-size: 4.2rem;
-  }
 }
