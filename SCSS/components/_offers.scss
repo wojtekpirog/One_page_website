@@ -2,7 +2,7 @@
 @use "../mixins";
 
 .offers {
-  @include mixins.sectionBackground(colors.$blue-gradient-solid);
+  @include mixins.sectionBackground(colors.$blue-gradient);
 
   .section__heading {
     color: colors.$pure-white;
@@ -45,7 +45,8 @@
       background-color: colors.$primary-color;
       border: none;
       border-radius: 8px;
-      font-size: 2.2rem;
+      font-family: var(--nunito-regular);
+      font-size: 2.4rem;
       cursor: pointer;
 
       &::before {

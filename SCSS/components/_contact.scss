@@ -65,6 +65,7 @@
       font-size: 1.8rem;
       font-family: var(--nunito-semibold);
       color: colors.$pure-white;
+      cursor: pointer;
 
       &--reset {
         background-color: colors.$danger;

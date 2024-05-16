@@ -274,22 +274,22 @@ html {
   font-weight: 300;
 }
 .header__text {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 .header__btn {
-  padding: 0.8em 1.6em;
+  padding: 0.9em 1.8em;
   background-color: #FFF;
   color: #333;
   border: none;
   border-radius: 4px;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 500;
+  font-family: var(--nunito-semibold);
 }
 
 @media (min-width: 768px) {
   .header__title {
-    font-size: 5rem;
+    font-size: 6rem;
   }
   .header__text {
     font-size: 2rem;
@@ -303,7 +303,7 @@ html {
     background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5)), url("../assets/images/seychelles-hero-hq.jpg");
   }
   .header__title {
-    font-size: 6rem;
+    font-size: 8rem;
   }
   .header__text {
     font-size: 2.4rem;
@@ -511,13 +511,15 @@ html {
 }
 .islands__card-info-btn {
   width: 80%;
-  bottom: -2em;
+  bottom: -1em;
   left: 50%;
   transform: translateX(-50%);
-  padding: 1em;
+  padding: 0.7em;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: #00ffaa;
+  font-family: var(--nunito-semibold);
+  font-size: 2rem;
   cursor: pointer;
 }
 .islands__card-info-btn::before {
@@ -556,7 +558,7 @@ html {
 .offers {
   position: relative;
   overflow-x: hidden;
-  background: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
+  background: linear-gradient(45deg, rgba(20, 105, 241, 0.5), rgba(42, 10, 184, 0.5));
 }
 .offers .section__heading {
   color: #FFF;
@@ -591,7 +593,8 @@ html {
   background-color: #1755e7;
   border: none;
   border-radius: 8px;
-  font-size: 2.2rem;
+  font-family: var(--nunito-regular);
+  font-size: 2.4rem;
   cursor: pointer;
 }
 .offers__option-btn::before {
@@ -698,10 +701,10 @@ html {
 .team__card-info h3 {
   margin-bottom: 0.25em;
   font-family: var(--dancing-script-bold);
-  font-size: 3.2rem;
+  font-size: 3.6rem;
 }
 .team__card-info h4 {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
   font-size: 1.8rem;
 }
 .team__card--one {
@@ -745,7 +748,13 @@ html {
 }
 .statistics__box {
   align-items: center;
-  padding: 1em;
+  padding: 1.5em;
+}
+.statistics__box:first-child {
+  padding-top: 0;
+}
+.statistics__box:last-child {
+  padding-bottom: 0;
 }
 .statistics__box i {
   margin-bottom: 0.3em;
@@ -771,16 +780,30 @@ html {
   }
   .statistics__box {
     width: 50%;
+    padding: 2em 1em;
+  }
+  .statistics__box:nth-child(2) {
+    padding-top: 0;
+  }
+  .statistics__box:nth-child(5) {
+    padding-bottom: 0;
   }
 }
 @media (min-width: 768px) {
   .statistics__box {
     width: 33.3%;
   }
+  .statistics__box:nth-child(3) {
+    padding-top: 0;
+  }
+  .statistics__box:nth-child(4) {
+    padding-bottom: 0;
+  }
 }
 @media (min-width: 992px) {
   .statistics__box {
     width: 16.6%;
+    padding: 0 2em;
   }
 }
 .opinions {
@@ -893,6 +916,7 @@ html {
   font-size: 1.8rem;
   font-family: var(--nunito-semibold);
   color: #FFF;
+  cursor: pointer;
 }
 .contact__form-btn--reset {
   background-color: #8d0000;
