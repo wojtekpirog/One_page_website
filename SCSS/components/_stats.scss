@@ -1,5 +1,5 @@
-@use "../colors";
-@use "../mixins";
+@use "../utilities/colors";
+@use "../utilities/mixins";
 
 .statistics {
   @include mixins.sectionBackground(colors.$less-light);

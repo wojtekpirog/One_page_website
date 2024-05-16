@@ -1,5 +1,5 @@
-@use "../colors";
-@use "../mixins";
+@use "../utilities/colors";
+@use "../utilities/mixins";
 
 .opinions {
   @include mixins.sectionBackground(colors.$blue-gradient);
