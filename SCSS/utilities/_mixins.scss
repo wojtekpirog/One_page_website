@@ -6,8 +6,10 @@
   right: 20px;
   padding: 1.5em;
   border: 2px solid transparent;
+  border-radius: 8px;
   background-color: transparent;
   z-index: 3;
+  cursor: pointer;
 }
 
 @mixin bgImg($url) {

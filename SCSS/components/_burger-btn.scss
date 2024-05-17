@@ -3,16 +3,20 @@
 
 .burger-btn {
   @include mixins.burgerBtn;
-  cursor: pointer;
+  transition: opacity 200ms linear;
 
-  .black-bars,
-  .black-bars::before,
-  .black-bars::after {
-    background-color: colors.$dark;
+  &:focus {
+    outline: none;
+    border-color: colors.$pure-white;
+  }
+
+  &:hover {
+    opacity: .7;
   }
 
   &__box {
     position: relative;
+    display: block;
     width: 40px;
     height: 30px;
   }
@@ -20,39 +24,94 @@
   &__bars,
   &__bars::before,
   &__bars::after {
-    content: "";
     position: absolute;
-    right: 0;    
+    right: 0;
+    width: 100%;
     height: 3px;
-    background-color: colors.$light;
-    transition: width 300ms;
+    background-color: colors.$pure-white;
+    transition: transform 200ms linear;
   }
 
   &__bars {
-    top: 0;
-    width: 100%;
+    display: block;
+    top: 13px;
 
+    &::before,
+    &::after {
+      content: "";
+    }
     &::before {
-      top: 13px;
-      width: 60%;
-      transition-delay: 100ms;
+      top: -13px;
+      width: 100%;
     }
     &::after {
-      top: 27px;
-      width: 30%;
-      transition-delay: 200ms;
+      top: 13px;
     }
   }
 
-  &:focus {
-    border: 2px solid colors.$light;
-    border-radius: 8px;
-  }
+  &.active {
+    .burger-btn__bars {
+      transform: rotate(45deg);
 
-  &:hover {
-    .burger-btn__bars::before,
-    .burger-btn__bars::after {
-      width: 100%;
+      &::before {
+        top: 0;
+        opacity: 0;
+      }
+      &::after {
+        top: 0;
+        transform: rotate(-90deg);
+      }
     }
   }
 }
+
+  // .black-bars,
+  // .black-bars::before,
+  // .black-bars::after {
+  //   background-color: colors.$dark;
+  // }
+
+  // &__box {
+  //   position: relative;
+  //   width: 40px;
+  //   height: 30px;
+  // }
+
+  // &__bars,
+  // &__bars::before,
+  // &__bars::after {
+  //   content: "";
+  //   position: absolute;
+  //   right: 0;    
+  //   height: 3px;
+  //   background-color: colors.$light;
+  //   transition: width 300ms;
+  // }
+
+  // &__bars {
+  //   top: 0;
+  //   width: 100%;
+
+  //   &::before {
+  //     top: 13px;
+  //     width: 60%;
+  //     transition-delay: 100ms;
+  //   }
+  //   &::after {
+  //     top: 27px;
+  //     width: 30%;
+  //     transition-delay: 200ms;
+  //   }
+  // }
+
+  // &:focus {
+  //   border: 2px solid colors.$light;
+  //   border-radius: 8px;
+  // }
+
+  // &:hover {
+  //   .burger-btn__bars::before,
+  //   .burger-btn__bars::after {
+  //     width: 100%;
+  //   }
+  // }
