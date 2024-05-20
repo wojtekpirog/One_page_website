@@ -91,7 +91,7 @@ const clearError = (input) => {
 
 const toggleNavbar = () => {
   nav.classList.toggle("nav--active");
-  burgerBtnBars.classList.remove("black-bars");
+  burgerBtn.classList.toggle("active");
   
   allNavItems.forEach((navItem) => {
     navItem.addEventListener("click", () => {

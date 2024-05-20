@@ -153,7 +153,6 @@ html {
 }
 .burger-btn__bars::before {
   top: -13px;
-  width: 100%;
 }
 .burger-btn__bars::after {
   top: 13px;
@@ -168,6 +167,12 @@ html {
 .burger-btn.active .burger-btn__bars::after {
   top: 0;
   transform: rotate(-90deg);
+}
+
+.black-bars,
+.black-bars::before,
+.black-bars::after {
+  background-color: #333;
 }
 
 .nav {

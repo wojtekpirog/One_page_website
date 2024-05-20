@@ -42,7 +42,6 @@
     }
     &::before {
       top: -13px;
-      width: 100%;
     }
     &::after {
       top: 13px;
@@ -63,6 +62,12 @@
       }
     }
   }
+}
+
+.black-bars,
+.black-bars::before,
+.black-bars::after {
+  background-color: colors.$dark;
 }
 
   // .black-bars,
