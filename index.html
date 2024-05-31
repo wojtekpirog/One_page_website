@@ -7,6 +7,7 @@
     <meta name="author" content="Wojciech Piróg" />
     <title>Sandbox Repository</title>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/7aa1ebf341.js" crossorigin="anonymous"></script>
   </head>
@@ -34,9 +35,9 @@
     <!-- Nav -->
     <!-- Heading -->
     <header class="header section">
-      <h1 class="header__title">Tropical Paradise</h1>
-      <p class="header__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, officia.</p>
-      <a href="#offer" class="header__btn btn-special-animation" target="_blank" draggable="true">Poznaj ofertę</a>
+      <h1 class="header__title" data-aos="zoom-in-up">Tropical Paradise</h1>
+      <p class="header__text" data-aos="zoom-in-up" data-aos-delay="100">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, officia.</p>
+      <a href="#offer" class="header__btn btn-special-animation" target="_blank" draggable="true" data-aos="zoom-in-up" data-aos-delay="200">Poznaj ofertę</a>
       <div class="white-block white-block-left"></div>
     </header>
     <!-- Heading -->
@@ -48,7 +49,7 @@
         <div class="wrapper">
           <h2 class="section__heading">Spełniaj marzenia</h2>
           <!-- Dream box -->
-          <div class="dreams__box">
+          <div class="dreams__box" data-aos="fade-right">
             <div class="dreams__box-img dreams__box-img--one">
               <img src="./assets/images/bora-bora.jpg" alt="Domki na wyspie Bora-Bora nad oceanem" class="dreams__img">
             </div>
@@ -59,7 +60,7 @@
           </div>
           <!-- Dream box -->
           <!-- Dream box -->
-          <div class="dreams__box">
+          <div class="dreams__box" data-aos="fade-left">
             <div class="dreams__box-img dreams__box-img--two">
               <img src="./assets/images/polynesia.jpg" alt="Krystalicznie czysta woda nad oceanem" class="dreams__img">
             </div>
@@ -91,7 +92,7 @@
           <!-- Islands -->
           <div class="islands__cards">
             <!-- Island card -->
-            <div class="islands__card" onclick="void(0)">
+            <div class="islands__card" onclick="void(0)" data-aos="flip-right" data-aos-delay="300">
               <!-- Front of the card -->
               <div class="islands__card-img islands__card-img--first">
                 <h3 class="islands__card-img-title">Bali</h3>
@@ -117,7 +118,7 @@
             </div>
             <!-- Island card -->
             <!-- Island card -->
-            <div class="islands__card" onclick="void(0)">
+            <div class="islands__card" onclick="void(0)" data-aos="flip-up" data-aos-delay="900">
               <!-- Front of the card -->
               <div class="islands__card-img islands__card-img--second">
                 <h3 class="islands__card-img-title">Osikawa</h3>
@@ -141,7 +142,9 @@
               </div>
               <!-- Rear of the card -->
             </div>
-            <div class="islands__card" onclick="void(0)">
+            <!-- Island card -->
+            <!-- Island card -->
+            <div class="islands__card" onclick="void(0)" data-aos="flip-left" data-aos-delay="600">
               <!-- Front of the card -->
               <div class="islands__card-img islands__card-img--third">
                 <h3 class="islands__card-img-title">Toca Toca</h3>
@@ -248,7 +251,7 @@
           <!-- Team cards -->
           <div class="team__cards">
             <!-- Team card -->
-            <div class="team__card team__card--one">
+            <div class="team__card team__card--one" data-aos="fade-right" data-aos-delay="300">
               <!-- Btn -->
               <button type="button" class="team__card-btn">
                 <i class="far fa-question-circle"></i>
@@ -264,7 +267,7 @@
             </div>
             <!-- Team card -->
             <!-- Team card -->
-            <div class="team__card team__card--two">
+            <div class="team__card team__card--two" data-aos="fade-down" data-aos-delay="900">
               <!-- Btn -->
               <button type="button" class="team__card-btn">
                 <i class="far fa-question-circle"></i>
@@ -280,7 +283,7 @@
             </div>
             <!-- Team card -->
             <!-- Team card -->
-            <div class="team__card team__card--three">
+            <div class="team__card team__card--three" data-aos="fade-left" data-aos-delay="600">
               <!-- Btn -->
               <button type="button" class="team__card-btn">
                 <i class="far fa-question-circle"></i>
@@ -312,35 +315,35 @@
           <!-- Statistics -->
           <div class="statistics__boxes">
             <!-- Stat box -->
-            <div class="statistics__box">
+            <div class="statistics__box" data-aos="zoom-in" data-aos-delay="900">
               <i class="fa-solid fa-thumbs-up"></i>
               <h3 class="statistics__box-heading">100%</h3>
               <p class="statistics__box-text">Zadowolonych klientów</p>
             </div>
             <!-- Stat box -->
             <!-- Stat box -->
-            <div class="statistics__box">
+            <div class="statistics__box" data-aos="zoom-in" data-aos-delay="600">
               <i class="fa-solid fa-award"></i>
               <h3 class="statistics__box-heading">37</h3>
               <p class="statistics__box-text">Zdobytych nagród</p>
             </div>
             <!-- Stat box -->
             <!-- Stat box -->
-            <div class="statistics__box">
+            <div class="statistics__box" data-aos="zoom-in" data-aos-delay="300">
               <i class="fa-solid fa-hotel"></i>
               <h3 class="statistics__box-heading">50</h3>
               <p class="statistics__box-text">Wysp</p>
             </div>
             <!-- Stat box -->
             <!-- Stat box -->
-            <div class="statistics__box">
+            <div class="statistics__box" data-aos="zoom-in" data-aos-delay="300">
               <i class="fa-solid fa-bell-concierge"></i>
               <h3 class="statistics__box-heading">148</h3>
               <p class="statistics__box-text">Hoteli</p>
             </div>
             <!-- Stat box -->
             <!-- Stat box -->
-            <div class="statistics__box">
+            <div class="statistics__box" data-aos="zoom-in" data-aos-delay="600">
               <i class="fa-solid fa-map-location-dot"></i>
               <h3 class="statistics__box-heading">Ponad 300</h3>
               <p class="statistics__box-text">Tras wycieczkowych</p>
@@ -348,7 +351,7 @@
             <!-- Stat box -->
             <!-- Stat box -->
             <!-- Stat box -->
-            <div class="statistics__box">
+            <div class="statistics__box" data-aos="zoom-in" data-aos-delay="900">
               <i class="fa-solid fa-share-nodes"></i>
               <h3 class="statistics__box-heading">60.000</h3>
               <p class="statistics__box-text">Fanów w social media</p>
@@ -551,6 +554,8 @@
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/aos.js"></script>
     <script src="./js/slick.js"></script>
     <script src="./js/script.js"></script>
   </body>
