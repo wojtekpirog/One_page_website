@@ -25,10 +25,10 @@
   background: $color;
 }
 
-@mixin contactForm {
+@mixin contactForm($radius) {
   padding: .8em 1.6em;
   border: 2px solid colors.$dark;
-  border-radius: 8px;
+  border-radius: $radius;
   font-size: 1.8rem;
-  font-family: var(--open-sans-regular);
+  font-family: var(--nunito-regular);
 }

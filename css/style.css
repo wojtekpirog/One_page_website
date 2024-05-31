@@ -111,6 +111,72 @@ html {
   letter-spacing: 1px;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  padding: 2em;
+  background-color: #FFF;
+  border-radius: 8px;
+  z-index: 2;
+}
+.modal__text {
+  margin-bottom: 1em;
+  font-family: var(--nunito-semibold);
+  font-size: 2.2rem;
+}
+.modal__btn-close {
+  padding: 0.8em 1.6em;
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 1.8rem;
+  font-family: var(--nunito-regular);
+  background-color: #1755e7;
+  color: #fefefe;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.modal__btn-close:focus {
+  outline: none;
+  border-color: #333;
+}
+.modal.active {
+  display: block;
+}
+.modal.animation {
+  animation: showModal 500ms linear;
+}
+
+.modal-shadow {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(40, 40, 40, 0.5);
+  z-index: 1;
+}
+.modal-shadow.active {
+  display: block;
+}
+.modal-shadow.animation {
+  animation: showModal 500ms linear;
+}
+
+@keyframes showModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .burger-btn {
   position: fixed;
   top: 20px;
@@ -489,6 +555,7 @@ html {
   background-size: cover;
   box-shadow: 4px 4px 10px rgba(40, 40, 40, 0.5);
   overflow: hidden;
+  filter: saturate(80%);
 }
 .team__card-btn {
   position: absolute;
@@ -669,14 +736,14 @@ html {
   border: 2px solid #333;
   border-radius: 8px;
   font-size: 1.8rem;
-  font-family: var(--open-sans-regular);
+  font-family: var(--nunito-regular);
 }
 .contact__form-textarea {
   padding: 0.8em 1.6em;
   border: 2px solid #333;
   border-radius: 8px;
   font-size: 1.8rem;
-  font-family: var(--open-sans-regular);
+  font-family: var(--nunito-regular);
   resize: vertical;
   min-height: 150px;
   padding: 0.8em;

@@ -9,6 +9,9 @@ let textarea;
 let error;
 let clearBtn;
 let submitBtn;
+let modal;
+let modalShadow;
+let modalCloseButton;
 let footerYear;
 
 const main = () => {
@@ -29,6 +32,9 @@ const prepareElements = () => {
   error = document.querySelector(".contact__form-error");
   clearBtn = document.querySelector(".contact__form-btn--reset");
   submitBtn = document.querySelector(".contact__form-btn--submit");
+  modal = document.querySelector(".modal");
+  modalShadow = document.querySelector(".modal-shadow");
+  modalCloseButton = document.querySelector(".modal__btn-close");
   footerYear = document.querySelector(".footer__year");
 }
 
@@ -36,12 +42,16 @@ const addEventListeners = () => {
   burgerBtn.addEventListener("click", toggleNavbar);
   clearBtn.addEventListener("click", handleFormClear);
   submitBtn.addEventListener("click", handleFormSubmit);
+  modalCloseButton.addEventListener("click", closeModal);
   window.addEventListener("scroll", handleObserver);
 }
 
 const handleFormClear = (event) => {
   event.preventDefault();
-  [fullname, email, textarea].forEach((input) => input.value = "");
+  [fullname, email, textarea].forEach((input) => {
+    input.value = "";
+    clearError(input);
+  });
 }
 
 const handleFormSubmit = (event) => {
@@ -50,6 +60,7 @@ const handleFormSubmit = (event) => {
   checkForm([fullname, email, textarea]);
   checkLength([fullname, email, textarea]);
   checkEmailAddress(email);
+  showModal();
 }
 
 const checkForm = (formInputs) => {
@@ -85,8 +96,8 @@ const showError = (input, message) => {
 
 const clearError = (input) => {
   input.style.borderColor = "#333";
-  input.nextElementSibling.style.display = "none";
   input.nextElementSibling.textContent = "";
+  input.nextElementSibling.style.display = "none";
 }
 
 const toggleNavbar = () => {
@@ -129,6 +140,26 @@ const handleObserver = () => {
       burgerBtnBars.classList.remove("black-bars");
     }
   });
+}
+
+const showModal = () => {
+  let errorCount = 0;
+
+  [fullname, email, textarea].forEach((input) => {
+    if (input.nextElementSibling.style.display === "block") {
+      errorCount += 1;
+    }
+  })
+
+  if (errorCount === 0) {
+    modal.classList.add("active", "animation");
+    modalShadow.classList.add("active", "animation");
+  }
+}
+
+const closeModal = () => {
+  modal.classList.remove("active", "animation");
+  modalShadow.classList.remove("active", "animation");
 }
 
 window.addEventListener("DOMContentLoaded", main);

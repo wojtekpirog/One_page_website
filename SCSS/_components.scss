@@ -1,4 +1,5 @@
 @use "./utilities/colors";
+@use "./utilities/mixins";
 
 .wrapper {
   margin: 0 auto;
@@ -62,4 +63,74 @@
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  padding: 2em;
+  background-color: colors.$pure-white;
+  border-radius: 8px;
+  z-index: 2;
+
+  &__text {
+    margin-bottom: 1em;
+    font-family: var(--nunito-semibold);
+    font-size: 2.2rem;
+  }
+
+  &__btn-close {
+    @include mixins.contactForm($radius: 4px);
+    background-color: colors.$primary-color;
+    color: colors.$light;
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: colors.$dark;
+    }
+  }
+
+  &.active {
+    display: block;
+  }
+
+  &.animation {
+    animation: showModal 500ms linear;
+  }
+}
+
+.modal-shadow {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: colors.$box-shadow;
+  z-index: 1;
+
+  &.active {
+    display: block;
+  }
+
+  &.animation {
+    animation: showModal 500ms linear;
+  }
+}
+
+@keyframes showModal {
+  from {
+    opacity: 0;
+  } 
+  to {
+    opacity: 1;
+  }
 }

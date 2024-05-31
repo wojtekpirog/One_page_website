@@ -35,11 +35,11 @@
     }
 
     &-input {
-      @include mixins.contactForm;
+      @include mixins.contactForm(8px);
     }
 
     &-textarea {
-      @include mixins.contactForm;
+      @include mixins.contactForm(8px);
       resize: vertical;
       min-height: 150px;
       padding: .8em;

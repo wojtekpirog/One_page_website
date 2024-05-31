@@ -16,6 +16,7 @@
     background-size: cover;
     box-shadow: 4px 4px 10px colors.$box-shadow;
     overflow: hidden;
+    filter: saturate(80%);
 
     &-btn {
       position: absolute;
