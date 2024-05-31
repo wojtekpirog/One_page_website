@@ -96,6 +96,7 @@ const toggleNavbar = () => {
   allNavItems.forEach((navItem) => {
     navItem.addEventListener("click", () => {
       nav.classList.remove("nav--active");
+      burgerBtn.classList.remove("active");
     });
   });
   
