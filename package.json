@@ -1,0 +1,37 @@
+{
+  "name": "one_page_website",
+  "version": "1.0.0",
+  "description": "My **sandbox repository** for training purposes. It is *not* related to any portfolio-worthy project.",
+  "main": "gulpfile.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wojtekpirog/One_page_website.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "wojtekpirog",
+    "url": "https://github.com/wojtekpirog"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "browser-sync": "^3.0.2",
+    "cssnano": "^7.0.4",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.77.8"
+  },
+  "dependencies": {
+    "swiper": "^11.2.8"
+  }
+}
