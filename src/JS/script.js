@@ -1,6 +1,6 @@
-let nav;
+let navbar;
 let burgerBtn;
-let allNavItems;
+let navbarItems;
 let burgerBtnBars;
 let allSections;
 let fullname;
@@ -21,9 +21,9 @@ const main = () => {
 }
 
 const prepareElements = () => {
-  nav = document.querySelector(".nav");
+  navbar = document.querySelector(".navbar");
   burgerBtn = document.querySelector(".burger-btn");
-  allNavItems = document.querySelectorAll(".nav__item");
+  navbarItems = document.querySelectorAll(".navbar__item");
   burgerBtnBars = document.querySelector(".burger-btn__bars");
   allSections = document.querySelectorAll(".section");
   fullname = document.querySelector("#fullname");
@@ -101,15 +101,31 @@ const clearError = (input) => {
 }
 
 const toggleNavbar = () => {
-  nav.classList.toggle("nav--active");
-  burgerBtn.classList.toggle("active");
-  
-  allNavItems.forEach((navItem) => {
-    navItem.addEventListener("click", () => {
-      nav.classList.remove("nav--active");
-      burgerBtn.classList.remove("active");
+  if (!navbar.classList.contains("navbar--active")) {
+    // If the navigation is not active, activate it & set the aria-expanded attribute to true
+    navbar.classList.add("navbar--active");
+    burgerBtn.classList.add("burger-btn__active");
+    burgerBtn.setAttribute("aria-expanded", "true");
+    // Add an event listener to each link inside the navigation
+    navbarItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        navbar.classList.remove("navbar--active");
+        burgerBtn.classList.remove("burger-btn__active");
+      });
     });
-  });
+  } else {
+    // If the navigation is active, deactivate it & set the aria-expanded attribute to false
+    navbar.classList.remove("navbar--active");
+    burgerBtn.classList.remove("burger-btn__active");
+    burgerBtn.setAttribute("aria-expanded", "false");
+    // Remove the event listener from each link inside the navigation
+    navbarItems.forEach((item) => {
+      item.removeEventListener("click", () => {
+        navbar.classList.remove("navbar--active");
+        burgerBtn.classList.remove("burger-btn__active");
+      });
+    });
+  }
   
   handleNavItemAnimation();
   handleObserver();
@@ -118,9 +134,9 @@ const toggleNavbar = () => {
 const handleNavItemAnimation = () => {
   let delay = 0;
 
-  allNavItems.forEach((navItem) => {
-    navItem.classList.toggle("nav__item-animation");
-    navItem.style.animationDelay = `${delay}ms`;
+  navbarItems.forEach((item) => {
+    item.classList.toggle("navbar__item-animation");
+    item.style.animationDelay = `${delay}ms`;
     delay += 100;
   });
 }
@@ -162,4 +178,4 @@ const closeModal = () => {
   modalShadow.classList.remove("active", "animation");
 }
 
-window.addEventListener("DOMContentLoaded", main);
+document.addEventListener("DOMContentLoaded", main);

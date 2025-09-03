@@ -2,21 +2,30 @@
 
 .dreams {
   &__box {
+    margin-bottom: 1em;
     display: flex;
     flex-direction: column;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
+
   &__img {
     width: 100%;
     margin-bottom: 2rem;
     border-radius: 6px;
   }
+
   &__title {
     margin-bottom: 1rem;
     font-size: 2.8rem;
   }
+
   &__text {
     font-size: 1.6rem;
     margin-bottom: 2rem;
     color: colors.$paragraph-color;
+    line-height: 1.5;
   }
 }

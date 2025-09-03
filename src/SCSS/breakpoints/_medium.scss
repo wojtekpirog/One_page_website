@@ -23,9 +23,11 @@
   // Header
   .header {
     &__title {
+      margin-bottom: .2em;
       font-size: 6rem;
     }
     &__text {
+      margin-bottom: 1.4em;
       font-size: 2rem;
     }    
     &__btn {

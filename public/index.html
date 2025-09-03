@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- Burger btn -->
-    <button type="button" class="burger-btn">
+    <button type="button" class="burger-btn" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="mobile-menu">
       <!-- Burger box -->
       <span class="burger-btn__box">
         <span class="burger-btn__bars"></span>
@@ -23,14 +23,14 @@
     </button>
     <!-- Burger btn -->
     <!-- Nav -->
-    <nav class="nav">
-      <ul class="nav__items">
-        <a href="#islands" class="nav__item">Wyspy</a>
-        <a href="#offers" class="nav__item">Oferty</a>
-        <a href="#team" class="nav__item">Zespół</a>
-        <a href="#statistics" class="nav__item">Statystyki</a>
-        <a href="#reviews" class="nav__item">Opinie</a>
-        <a href="#contact" class="nav__item">Kontakt</a>
+    <nav id="mobile-menu" class="navbar">
+      <ul class="navbar__items">
+        <a href="#islands" class="navbar__item">Wyspy</a>
+        <a href="#offers" class="navbar__item">Oferty</a>
+        <a href="#team" class="navbar__item">Zespół</a>
+        <a href="#statistics" class="navbar__item">Statystyki</a>
+        <a href="#reviews" class="navbar__item">Opinie</a>
+        <a href="#contact" class="navbar__item">Kontakt</a>
       </ul>
     </nav>
     <!-- Nav -->
@@ -566,5 +566,5 @@
     <div class="modal-shadow"></div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./JS/aos.js"></script>
-    <script src="./JS/script.js"></script>
+    <script src="./JS/script.min.js"></script>
   </body>
