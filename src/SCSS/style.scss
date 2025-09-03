@@ -16,18 +16,3 @@
 @use "./breakpoints/small";
 @use "./breakpoints/medium";
 @use "./breakpoints/large";
-
-:root {
-  --dancing-script-regular: "DancingScript-Regular", sans-serif;
-  --dancing-script-medium: "DancingScript-Medium", sans-serif;
-  --dancing-script-semibold: "DancingScript-SemiBold", sans-serif;
-  --dancing-script-bold: "DancingScript-Bold", sans-serif;
-  --nunito-regular: "Nunito-Regular", sans-serif;
-  --nunito-semibold: "Nunito-SemiBold", sans-serif;
-}
-
-body {
-  font-family: var(--nunito-regular);
-  font-size: 1.6rem;
-  overflow-x: hidden;
-}

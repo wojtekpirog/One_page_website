@@ -6,7 +6,20 @@
   box-sizing: border-box;
 }
 
-html {
+:root {
+  --primary-font-regular: "DancingScript-Regular", sans-serif;
+  --primary-font-medium: "DancingScript-Medium", sans-serif;
+  --primary-font-semibold: "DancingScript-SemiBold", sans-serif;
+  --primary-font-bold: "DancingScript-Bold", sans-serif;
+  --secondary-font-regular: "Nunito-Regular", sans-serif;
+  --secondary-font-semibold: "Nunito-SemiBold", sans-serif;
+
   font-size: 62.5%;
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--secondary-font-regular);
+  font-size: 1.6rem;
+  overflow-x: hidden;
 }

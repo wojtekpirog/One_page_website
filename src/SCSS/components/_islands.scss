@@ -24,13 +24,13 @@
       background-size: cover;
 
       &--first {
-        background-image: colors.$light-blue-gradient, url("../assets/images/bali-island.jpg");
+        background-image: colors.$light-blue-gradient, url("../assets/images/bali-island.min.jpg");
       }
       &--second {
-        background-image: colors.$blue-gradient, url("../assets/images/japanese-island.jpg");
+        background-image: colors.$blue-gradient, url("../assets/images/japanese-island.min.jpg");
       }
       &--third {
-        background-image: colors.$purple-gradient, url("../assets/images/hawaii-palms-pond.jpg");
+        background-image: colors.$purple-gradient, url("../assets/images/hawaii-palms-pond.min.jpg");
       }
 
       &-title {

@@ -25,7 +25,7 @@ const path = require("path");
 const paths = {
   styles: {
     src: "./src/SCSS/**/*.scss",
-    dist: "./public/css",
+    dist: "./public/CSS",
   },
 
   scripts: {

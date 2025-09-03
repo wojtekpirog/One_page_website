@@ -11,7 +11,7 @@
   align-items: center;
   text-align: center;
   color: colors.$pure-white;
-  @include mixins.bgImg("../assets/images/seychelles-hero.jpg");
+  @include mixins.bgImg("../assets/images/seychelles-hero.min.jpg");
 
   &__title, &__text {
     margin: 2rem 0;

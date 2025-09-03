@@ -9,19 +9,21 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 2em;
   color: colors.$light;
-  @include mixins.bgImg("../assets/images/seychelles-hero.jpg");
+  @include mixins.bgImg("../assets/images/seychelles-hero.min.jpg");
 
   &__title {
-    margin-bottom: .2em;
-    font-family: var(--dancing-script-bold);
+    margin-bottom: .45em;
+    font-family: var(--primary-font-bold);
     font-size: 5rem;
     font-weight: 300;
+    line-height: 1.2;
   }
 
   &__text {
     margin-bottom: 2em;
+    line-height: 1.75;
   }
   
   &__btn {
