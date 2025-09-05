@@ -64,9 +64,9 @@
   }
 }
 
-.black-bars,
-.black-bars::before,
-.black-bars::after {
+.burger-btn__bars--black,
+.burger-btn__bars--black::before,
+.burger-btn__bars--black::after {
   background-color: colors.$dark;
 }
 

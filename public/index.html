@@ -15,25 +15,38 @@
   <body>
     <!-- Burger btn -->
     <button type="button" class="burger-btn" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="mobile-menu">
-      <!-- Burger box -->
       <span class="burger-btn__box">
         <span class="burger-btn__bars"></span>
       </span>
-      <!-- Burger box -->
     </button>
-    <!-- Burger btn -->
+    <!-- /Burger btn -->
     <!-- Nav -->
     <nav id="mobile-menu" class="navbar">
-      <ul class="navbar__items">
-        <a href="#islands" class="navbar__item">Wyspy</a>
-        <a href="#offers" class="navbar__item">Oferty</a>
-        <a href="#team" class="navbar__item">Zespół</a>
-        <a href="#statistics" class="navbar__item">Statystyki</a>
-        <a href="#reviews" class="navbar__item">Opinie</a>
-        <a href="#contact" class="navbar__item">Kontakt</a>
+      <!-- Navbar list -->
+      <ul class="navbar__list">
+        <li class="navbar__list-item">
+          <a href="#islands" class="navbar__link">Wyspy</a>
+        </li>
+        <li class="navbar__list-item">
+          <a href="#offers" class="navbar__link">Oferty</a>
+        </li>
+        <li class="navbar__list-item">
+          <a href="#team" class="navbar__link">Zespół</a>
+        </li>
+        <li class="navbar__list-item">
+          <a href="#statistics" class="navbar__link">Statystyki</a>
+        </li>
+        <li class="navbar__list-item">
+          <a href="#reviews" class="navbar__link">Opinie</a>
+        </li>
+        <li class="navbar__list-item">
+          <a href="#contact" class="navbar__link">Kontakt</a>
+        </li>
       </ul>
+      <!-- /Navbar list -->
     </nav>
-    <!-- Nav -->
+    <!-- /Nav -->
+    <div class="navbar__overlay"></div> <!-- Navbar overlay (page overlay when mobile menu is opened) -->
     <!-- Heading -->
     <header class="header section">
       <h1 class="header__title" data-aos="zoom-in-up">Tropical Paradise</h1>
@@ -564,7 +577,7 @@
     <!-- Modal -->
     <!-- Page shadow -->
     <div class="modal-shadow"></div>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./JS/aos.js"></script>
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <!-- <script src="./JS/aos.js"></script> -->
     <script src="./JS/script.min.js"></script>
   </body>

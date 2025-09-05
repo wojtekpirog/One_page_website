@@ -1,6 +1,7 @@
 let navbar;
 let burgerBtn;
 let navbarItems;
+let navbarOverlay;
 let burgerBtnBars;
 let allSections;
 let fullname;
@@ -23,7 +24,8 @@ const main = () => {
 const prepareElements = () => {
   navbar = document.querySelector(".navbar");
   burgerBtn = document.querySelector(".burger-btn");
-  navbarItems = document.querySelectorAll(".navbar__item");
+  navbarItems = document.querySelectorAll(".navbar__link");
+  navbarOverlay = document.querySelector(".navbar__overlay");
   burgerBtnBars = document.querySelector(".burger-btn__bars");
   allSections = document.querySelectorAll(".section");
   fullname = document.querySelector("#fullname");
@@ -102,41 +104,50 @@ const clearError = (input) => {
 
 const toggleNavbar = () => {
   if (!navbar.classList.contains("navbar--active")) {
-    // If the navigation is not active, activate it & set the aria-expanded attribute to true
-    navbar.classList.add("navbar--active");
-    burgerBtn.classList.add("burger-btn__active");
-    burgerBtn.setAttribute("aria-expanded", "true");
-    // Add an event listener to each link inside the navigation
-    navbarItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        navbar.classList.remove("navbar--active");
-        burgerBtn.classList.remove("burger-btn__active");
-      });
+    // If the navigation is closed, open it
+    openNavbar();
+    // When clicked, each link inside the navigation should close the navigation
+    navbarItems.forEach((navbarItem) => {
+      navbarItem.addEventListener("click", closeNavbar);
     });
   } else {
-    // If the navigation is active, deactivate it & set the aria-expanded attribute to false
-    navbar.classList.remove("navbar--active");
-    burgerBtn.classList.remove("burger-btn__active");
-    burgerBtn.setAttribute("aria-expanded", "false");
-    // Remove the event listener from each link inside the navigation
-    navbarItems.forEach((item) => {
-      item.removeEventListener("click", () => {
-        navbar.classList.remove("navbar--active");
-        burgerBtn.classList.remove("burger-btn__active");
-      });
+    // If the navigation is open, close it
+    closeNavbar();
+    // When closing the navigation, the event listener should be removed from each link
+    navbarItems.forEach((navbarItem) => {
+      navbarItem.removeEventListener("click", openNavbar);
     });
   }
   
-  handleNavItemAnimation();
+  handleNavLinkAnimation();
   handleObserver();
 }
 
-const handleNavItemAnimation = () => {
+const openNavbar = () => {
+  navbar.classList.add("navbar--active");
+  navbarOverlay.classList.add("navbar__overlay--active");
+  burgerBtn.classList.add("burger-btn__active");
+  burgerBtn.setAttribute("aria-expanded", "true");
+  burgerBtn.setAttribute("aria-label", "Zamknij menu nawigacyjne");
+  document.body.classList.add("no-scroll");
+  burgerBtnBars.classList.remove("black-bars");
+}
+
+const closeNavbar = () => {
+  navbar.classList.remove("navbar--active");
+  navbarOverlay.classList.remove("navbar__overlay--active");
+  burgerBtn.classList.remove("burger-btn__active");
+  burgerBtn.setAttribute("aria-expanded", "false");
+  burgerBtn.setAttribute("aria-label", "Otwórz menu nawigacyjne");
+  document.body.classList.remove("no-scroll");
+}
+
+const handleNavLinkAnimation = () => {
   let delay = 0;
 
   navbarItems.forEach((item) => {
-    item.classList.toggle("navbar__item-animation");
-    item.style.animationDelay = `${delay}ms`;
+    item.classList.toggle("navbar__link-animation");
+    item.style.setProperty("animation-delay", `${delay}ms`);
     delay += 100;
   });
 }
@@ -147,14 +158,19 @@ const handleCurrentYear = () => {
 }
 
 const handleObserver = () => {
-  const currentSection = window.scrollY; // Położenie krawędzi przeglądarki
+  // Current amount of scroll
+  const currentSection = window.scrollY;
 
+  // allSections.forEach((section) => {
+  //   if (section.classList.contains("white-section") && section.offsetTop <= currentSection + 20) {
+  //     burgerBtnBars.classList.add("burger-btn__bars--black");
+  //   } else if (!section.classList.contains("white-section") && section.offsetTop <= currentSection + 20) {
+  //     burgerBtnBars.classList.remove("burger-btn__bars--black");
+  //   }
+  // });
+  
   allSections.forEach((section) => {
-    if (section.classList.contains("white-section") && section.offsetTop <= currentSection + 20) {
-      burgerBtnBars.classList.add("black-bars");
-    } else if (!section.classList.contains("white-section") && section.offsetTop <= currentSection + 20) {
-      burgerBtnBars.classList.remove("black-bars");
-    }
+    
   });
 }
 
