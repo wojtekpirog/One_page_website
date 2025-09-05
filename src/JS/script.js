@@ -161,16 +161,12 @@ const handleObserver = () => {
   // Current amount of scroll
   const currentSection = window.scrollY;
 
-  // allSections.forEach((section) => {
-  //   if (section.classList.contains("white-section") && section.offsetTop <= currentSection + 20) {
-  //     burgerBtnBars.classList.add("burger-btn__bars--black");
-  //   } else if (!section.classList.contains("white-section") && section.offsetTop <= currentSection + 20) {
-  //     burgerBtnBars.classList.remove("burger-btn__bars--black");
-  //   }
-  // });
-  
   allSections.forEach((section) => {
-    
+    if (section.classList.contains("section--white") && section.offsetTop <= currentSection) {
+      burgerBtnBars.classList.add("burger-btn__bars--black");
+    } else if (!section.classList.contains("section--white") && section.offsetTop <= currentSection) {
+      burgerBtnBars.classList.remove("burger-btn__bars--black");
+    }
   });
 }
 
