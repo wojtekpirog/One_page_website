@@ -42,11 +42,14 @@ const prepareElements = () => {
 
 const addEventListeners = () => {
   burgerBtn.addEventListener("click", toggleNavbar);
+  navbarOverlay.addEventListener("click", closeNavbar);
   clearBtn.addEventListener("click", handleFormClear);
   submitBtn.addEventListener("click", handleFormSubmit);
   modalCloseButton.addEventListener("click", closeModal);
   window.addEventListener("scroll", handleObserver);
 }
+
+
 
 const handleFormClear = (event) => {
   event.preventDefault();
