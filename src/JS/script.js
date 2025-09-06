@@ -46,7 +46,7 @@ const addEventListeners = () => {
   clearBtn.addEventListener("click", handleFormClear);
   submitBtn.addEventListener("click", handleFormSubmit);
   modalCloseButton.addEventListener("click", closeModal);
-  window.addEventListener("scroll", handleObserver);
+  window.addEventListener("scroll", setBurgerBtnColor);
 }
 
 
@@ -123,13 +123,13 @@ const toggleNavbar = () => {
   }
   
   handleNavLinkAnimation();
-  handleObserver();
 }
 
 const openNavbar = () => {
   navbar.classList.add("navbar--active");
   navbarOverlay.classList.add("navbar__overlay--active");
-  burgerBtn.classList.add("burger-btn__active");
+  burgerBtn.classList.add("burger-btn--active");
+  burgerBtn.classList.remove("burger-btn--black-bars");
   burgerBtn.setAttribute("aria-expanded", "true");
   burgerBtn.setAttribute("aria-label", "Zamknij menu nawigacyjne");
   document.body.classList.add("no-scroll");
@@ -139,10 +139,12 @@ const openNavbar = () => {
 const closeNavbar = () => {
   navbar.classList.remove("navbar--active");
   navbarOverlay.classList.remove("navbar__overlay--active");
-  burgerBtn.classList.remove("burger-btn__active");
+  burgerBtn.classList.remove("burger-btn--active");
   burgerBtn.setAttribute("aria-expanded", "false");
   burgerBtn.setAttribute("aria-label", "Otwórz menu nawigacyjne");
   document.body.classList.remove("no-scroll");
+  // When closing the navigation, set the color of the burger menu icon color based to the background color of the current section
+  setBurgerBtnColor();
 }
 
 const handleNavLinkAnimation = () => {
@@ -160,15 +162,15 @@ const handleCurrentYear = () => {
   footerYear.textContent = year;
 }
 
-const handleObserver = () => {
+const setBurgerBtnColor = () => {
   // Current amount of scroll
   const currentSection = window.scrollY;
 
   allSections.forEach((section) => {
     if (section.classList.contains("section--white") && section.offsetTop <= currentSection) {
-      burgerBtnBars.classList.add("burger-btn__bars--black");
+      burgerBtn.classList.add("burger-btn--black-bars");
     } else if (!section.classList.contains("section--white") && section.offsetTop <= currentSection) {
-      burgerBtnBars.classList.remove("burger-btn__bars--black");
+      burgerBtn.classList.remove("burger-btn--black-bars");
     }
   });
 }

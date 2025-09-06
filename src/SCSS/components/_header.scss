@@ -27,13 +27,14 @@
   }
   
   &__btn {
-    padding: .9em 1.8em;
-    background-color: colors.$pure-white;
+    padding: 1em 1.8em;
+    background-color: colors.$sage-green;
     color: colors.$dark;
     border: none;
-    border-radius: 4px;
+    border-radius: 1.8em;
     text-decoration: none;
     text-transform: uppercase;
     font-family: var(--nunito-semibold);
+    line-height: 1;
   }
 }
