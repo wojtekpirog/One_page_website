@@ -1,8 +1,10 @@
+let root;
 let navbar;
 let burgerBtn;
 let navbarItems;
 let navbarOverlay;
 let burgerBtnBars;
+let scrollToTopButton;
 let allSections;
 let fullname;
 let email;
@@ -22,11 +24,13 @@ const main = () => {
 }
 
 const prepareElements = () => {
+  root = document.documentElement;
   navbar = document.querySelector(".navbar");
   burgerBtn = document.querySelector(".burger-btn");
   navbarItems = document.querySelectorAll(".navbar__link");
   navbarOverlay = document.querySelector(".navbar__overlay");
   burgerBtnBars = document.querySelector(".burger-btn__bars");
+  scrollToTopButton = document.querySelector(".scroll-to-top-button");
   allSections = document.querySelectorAll(".section");
   fullname = document.querySelector("#fullname");
   email = document.querySelector("#email");
@@ -43,13 +47,13 @@ const prepareElements = () => {
 const addEventListeners = () => {
   burgerBtn.addEventListener("click", toggleNavbar);
   navbarOverlay.addEventListener("click", closeNavbar);
+  scrollToTopButton.addEventListener("click", scrollToTop);
   clearBtn.addEventListener("click", handleFormClear);
   submitBtn.addEventListener("click", handleFormSubmit);
   modalCloseButton.addEventListener("click", closeModal);
   window.addEventListener("scroll", setBurgerBtnColor);
+  window.addEventListener("scroll", handleScrollToTop);
 }
-
-
 
 const handleFormClear = (event) => {
   event.preventDefault();
@@ -172,6 +176,28 @@ const setBurgerBtnColor = () => {
     } else if (!section.classList.contains("section--white") && section.offsetTop <= currentSection) {
       burgerBtn.classList.remove("burger-btn--black-bars");
     }
+  });
+}
+
+const handleScrollToTop = () => {
+  // Get the current amount of scroll
+  const currentScrollPosition = window.scrollY;
+  // Get the total height of the document
+  const totalScrollHeight = root.scrollHeight;
+  // Get the current viewport height
+  const viewportHeight = root.clientHeight;
+  // Get the maximum scroll height
+  const maxScrollHeight = totalScrollHeight - viewportHeight;
+  // If the current scroll position is greater than half the maximum scroll height, show the scroll to top button
+  currentScrollPosition > Math.round(maxScrollHeight * 0.3)
+    ? scrollToTopButton.classList.remove("scroll-to-top-button--hidden")
+    : scrollToTopButton.classList.add("scroll-to-top-button--hidden");
+}
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
 }
 

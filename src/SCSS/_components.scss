@@ -87,6 +87,28 @@
   letter-spacing: 1px;
 }
 
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 1.5em;
+  border: 2px solid transparent;
+  font-size: 2rem;
+  border-radius: 8px;
+  background-color: colors.$sage-green;
+  transition: right 300ms ease-in-out;
+  cursor: pointer;
+
+  &--hidden {
+    right: -80px;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: colors.$dark;
+  }
+}
+
 .modal {
   display: none;
   position: fixed;
