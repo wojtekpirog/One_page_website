@@ -1,3 +1,5 @@
+@use "./utilities/colors";
+
 *,
 *::before,
 *::after {
@@ -19,6 +21,7 @@
 }
 
 body {
+  background-color: colors.$beige;
   font-family: var(--secondary-font-regular);
   font-size: 1.6rem;
   overflow-x: hidden;

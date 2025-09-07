@@ -125,8 +125,6 @@ const toggleNavbar = () => {
       navbarItem.removeEventListener("click", openNavbar);
     });
   }
-  
-  handleNavLinkAnimation();
 }
 
 const openNavbar = () => {
@@ -149,16 +147,6 @@ const closeNavbar = () => {
   document.body.classList.remove("no-scroll");
   // When closing the navigation, set the color of the burger menu icon color based to the background color of the current section
   setBurgerBtnColor();
-}
-
-const handleNavLinkAnimation = () => {
-  let delay = 0;
-
-  navbarItems.forEach((item) => {
-    item.classList.toggle("navbar__link-animation");
-    item.style.setProperty("animation-delay", `${delay}ms`);
-    delay += 100;
-  });
 }
 
 const handleCurrentYear = () => {

@@ -80,7 +80,7 @@
   position: relative;
   margin-bottom: 2em;
   text-align: center;
-  color: colors.$primary-color;
+  color: colors.$olive-garden;
   font-size: 3rem;
   font-weight: 300;
   text-transform: uppercase;
@@ -95,9 +95,13 @@
   border: 2px solid transparent;
   font-size: 2rem;
   border-radius: 8px;
-  background-color: colors.$sage-green;
+  background-color: colors.$olive-garden;
   transition: right 300ms ease-in-out;
   cursor: pointer;
+
+  & > i {
+    color: colors.$beige;
+  }
 
   &--hidden {
     right: -80px;
