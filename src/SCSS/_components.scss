@@ -87,6 +87,18 @@
   letter-spacing: 1px;
 }
 
+.progress-bar {
+  --width: 0; // width of progress bar (custom property)
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: var(--width);
+  background-color: colors.$olive-garden;
+  z-index: 1;
+}
+
 .scroll-to-top-button {
   position: fixed;
   bottom: 30px;

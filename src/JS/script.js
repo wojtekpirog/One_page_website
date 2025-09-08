@@ -4,6 +4,7 @@ let burgerBtn;
 let navbarItems;
 let navbarOverlay;
 let burgerBtnBars;
+let progressBar;
 let scrollToTopButton;
 let allSections;
 let fullname;
@@ -31,6 +32,7 @@ const prepareElements = () => {
   navbarOverlay = document.querySelector(".navbar__overlay");
   burgerBtnBars = document.querySelector(".burger-btn__bars");
   scrollToTopButton = document.querySelector(".scroll-to-top-button");
+  progressBar = document.querySelector(".progress-bar");
   allSections = document.querySelectorAll(".section");
   fullname = document.querySelector("#fullname");
   email = document.querySelector("#email");
@@ -52,7 +54,7 @@ const addEventListeners = () => {
   submitBtn.addEventListener("click", handleFormSubmit);
   modalCloseButton.addEventListener("click", closeModal);
   window.addEventListener("scroll", setBurgerBtnColor);
-  window.addEventListener("scroll", handleScrollToTop);
+  window.addEventListener("scroll", handleScroll);
 }
 
 const handleFormClear = (event) => {
@@ -167,7 +169,7 @@ const setBurgerBtnColor = () => {
   });
 }
 
-const handleScrollToTop = () => {
+const handleScroll = () => {
   // Get the current amount of scroll
   const currentScrollPosition = window.scrollY;
   // Get the total height of the document
@@ -176,10 +178,14 @@ const handleScrollToTop = () => {
   const viewportHeight = root.clientHeight;
   // Get the maximum scroll height
   const maxScrollHeight = totalScrollHeight - viewportHeight;
+  // Calculate the scroll percentage
+  const scrollPercentage = Math.round((currentScrollPosition / maxScrollHeight) * 100);
   // If the current scroll position is greater than half the maximum scroll height, show the scroll to top button
-  currentScrollPosition > Math.round(maxScrollHeight * 0.3)
+  scrollPercentage => 30
     ? scrollToTopButton.classList.remove("scroll-to-top-button--hidden")
     : scrollToTopButton.classList.add("scroll-to-top-button--hidden");
+  // Set the width of the progress bar based on the scroll percentage
+  progressBar.style.setProperty("--width", `${scrollPercentage}%`);
 }
 
 const scrollToTop = () => {
